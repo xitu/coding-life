@@ -332,7 +332,7 @@ const achievementList = [
     grade: 0,
     condition: "AGE<13",
     hide: 0,
-    opportunity: "TRAJECTORY"
+    opportunity: "SUMMARY"
   },
   {
     id: 138,

@@ -60,7 +60,7 @@ class App{
                 <div style="font-size:1.5rem; font-weight:normal;">如果不是家里穷，我也不想当码农</div>
             </div>
             <button id="restart" class="mainbtn"><span class="iconfont">&#xe6a7;</span>立即重开</button>
-            <a id="discord" href="https://juejin.cn/pin/club/6824710202873348104" style="z-index: 9999;" aria-label="Chat on Discord"><button class="discord-btn">
+            <a id="discord" href="https://juejin.cn/pin/club/7009157550285258766" style="z-index: 9999;" aria-label="Chat on Discord"><button class="discord-btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="64" viewBox="0 0 94.011 74.831">
             <g transform="scale(0.9,0.9) translate(-297.913 -2489.466)">
               <path d="M344.918,2535.954l0,0h0l29.2-23.04-7.917-6.357-21.283,16.793,0,0-.009.007-21.278-16.788-7.915,6.359,29.194,23.033Z" fill="#fff"/>

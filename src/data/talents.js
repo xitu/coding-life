@@ -210,7 +210,24 @@ const talentList = [
   }, {
     id: 1022,
     name: "能吃能睡",
-    description: "健康+1，容易肥胖",
+    description: "心态+1，容易肥胖",
+    effect: {
+      SPR: 1,
+    },
+    exclusive: [
+      1122,
+    ],
+    grade: 0
+  }, {
+    id: 1122,
+    name: "坚持锻炼",
+    description: "健康+1，你不会过于肥胖",
+    effect: {
+      STR: 1,
+    },
+    exclusive: [
+      1022,
+    ],
     grade: 0
   }, {
     id: 1023,
@@ -303,12 +320,12 @@ const talentList = [
   }, {
     id: 1035,
     name: "大智若愚",
-    description: "智商-1，初始可用属性点+2",
-    grade: 2,
+    description: "智商-1，初始可用属性点+3",
+    grade: 1,
     effect: {
         INT: -1
     },
-    status: 2
+    status: 3
   }, {
     id: 1036,
     name: "砖家",
@@ -336,7 +353,7 @@ const talentList = [
     id: 1040,
     name: "洒脱",
     description: "心态+1",
-    grade: 0,
+    grade: 1,
     effect: {
       SPR: 1
     }
@@ -344,7 +361,7 @@ const talentList = [
     id: 1041,
     name: "掉发体质",
     description: "容易掉头发",
-    grade: 1
+    grade: 0
   }, {
     id: 1042,
     name: "外籍员工",
@@ -379,7 +396,7 @@ const talentList = [
     id: 1049,
     name: "一年一跳",
     description: "每年都要跳槽",
-    grade: 0
+    grade: 1
   }, {
     id: 1050,
     name: "房奴一族",
@@ -392,7 +409,7 @@ const talentList = [
     id: 1051,
     name: "傻人傻福",
     description: "智力-2，收入+2",
-    grade: 1,
+    grade: 0,
     effect: {
         INT: -2,
         MNY: 2
@@ -414,7 +431,7 @@ const talentList = [
     id: 1055,
     name: "聪明绝顶",
     description: "智商高地，发量堪忧",
-    grade: 1,
+    grade: 0,
     effect: {
       INT: 1,
       CHR: -1,
@@ -473,7 +490,129 @@ const talentList = [
     name: '好学青年',
     description: '即使在国企里，也能持续学习。',
     grade: 1,
-  }
+  },
+  {
+    id: 1065,
+    name: '学富五车',
+    description: '智力+3',
+    grade: 2,
+  },
+  {
+    id: 1066,
+    name: '长线投资',
+    description: '在一家公司工作超过5年，智力、心态+1',
+    effect: {
+      INT: 1,
+      SPR: 1,
+    },
+    grade: 1,
+  },
+  {
+    id: 1067,
+    name: '悟道',
+    grade: 1,
+    description: '智力>10时心态+3',
+    condition: 'INT>10',
+    effect: {
+      SPR: 3,
+    }
+  },
+  {
+    id: 1068,
+    name: '驻颜',
+    grade: 1,
+    description: '健康>10时颜值+3',
+    condition: 'STR>10',
+    effect: {
+      CHR: 3,
+    }
+  },
+  {
+    id: 1069,
+    name: '洛神',
+    grade: 1,
+    description: '颜值>10时健康+3',
+    condition: 'CHR>10',
+    effect: {
+      STR: 3,
+    }
+  },
+  {
+    id: 1070,
+    name: '生财',
+    grade: 1,
+    description: '智力>10时收入+3',
+    condition: 'INT>10',
+    effect: {
+      MNY: 3,
+    }
+  },
+  {
+    id: 1071,
+    name: '进修',
+    grade: 1,
+    description: '收入>10时智力+3',
+    condition: 'MNY>10',
+    effect: {
+      INT: 3,
+    }
+  },
+  {
+    id: 1072,
+    name: '相由心生',
+    grade: 1,
+    description: '智力>10时颜值+3',
+    condition: 'INT>10',
+    effect: {
+      CHR: 3,
+    }
+  },
+  {
+    id: 1073,
+    name: '整容',
+    grade: 1,
+    description: '收入>10时颜值+3',
+    condition: 'MNY>10',
+    effect: {
+      CHR: 3,
+    }
+  },
+  {
+    id: 1074,
+    name: '钻石健身卡',
+    grade: 1,
+    description: '收入>10时健康+3',
+    condition: 'MNY>10',
+    effect: {
+      STR: 3,
+    }
+  },
+  {
+    id: 1075,
+    name: '献祭',
+    grade: 0,
+    description: '初始属性-2，幸运+3',
+    effect: {
+      BLCK: 3,
+    },
+    status: -2,
+  },
+  {
+    id: 1076,
+    name: '起死回生',
+    grade: 2,
+    description: '健康<-3时，健康为0',
+    condition: 'STR<-3',
+    effect: {
+      STR: '0!',
+    },
+  },
+  {
+    id: 1077,
+    event: '矢志不渝',
+    description: '你不会出轨',
+    grade: 0,
+  },
 ];
 
 export const talents = map(talentList);

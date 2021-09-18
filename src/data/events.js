@@ -797,10 +797,12 @@ const eventList = [
     exclude: 'EVT?[150023]'
   }, {
     id: 150015,
-    event: "你去整容，颜值进一步提升",
-    include: "(CHR>5)&(MNY>5)",
+    event: "你本来去理发，结果被黑心整容机构忽悠去做了微整形。",
+    postEvent: "花了一大笔钱，好在颜值有些提升。",
+    exclude: 'EVT?[150015]',
     effect: {
-      CHR: 1
+      CHR: 1,
+      MNY: -1,
     }
   }, {
     id: 150016,
@@ -1748,6 +1750,7 @@ const eventList = [
   {
     id: 410005,
     event: "你购买了懒投资，结果被坑惨了。",
+    exclude: 'TLT?[1015]',
     effect: {
       MNY: -1,
     }
@@ -1784,7 +1787,7 @@ const eventList = [
     id: 400006,
     event: '经济状况不好，每个月还要还房贷，你觉得压力有点大。',
     include: '(EVT?[400005])&(MNY<3)',
-    exclude: 'EVT?[400006]',
+    exclude: '(EVT?[400006])|(TLT?[1058])',
     effect: {
       SPR: -1,
     }
@@ -1801,7 +1804,7 @@ const eventList = [
   {
     id: 400008,
     event: '房价不断上涨，工资不涨，你有点焦虑。',
-    exclude: '(EVT?[400005,400105])|(TLT?[1012])',
+    exclude: '(EVT?[400005,400105])|(TLT?[1012,1058])',
     effect: {
       SPR: -1,
     }
@@ -2333,6 +2336,80 @@ const eventList = [
     include: 'ENV<2',
     branch: jump1,
   },
+  {
+    id: 850067,
+    event: '你当了面试官，因为你的普通话不好，把来面试的小姑娘急哭了。',
+    postEvent: '她听不懂你提的问题。',
+    include: 'TLT?[1016]',
+    exclude: 'EVT?[850067]',
+    branch: jump1,
+  },
+  {
+    id: 850068,
+    event: '系统里发现一个重大漏洞。',
+    branch: [
+      'TLT?[1037]:853000',  // 八面玲珑
+      '(TLT?[1029])&(LCK<7):853001',  // 背锅侠
+      '(TLT?[1030])&(LCK>-5):853000', // 老好人
+      'LCK<0:853001',
+      'LCK>-100:853000',
+    ],
+  },
+  {
+    id: 853000,
+    event: '可能和你有关，但是同事和LD都没有为难你。',
+  },
+  {
+    id: 853001,
+    event: '同事把锅甩给你，你被LD扣了奖金。',
+    effect: {
+      MNY: -1,
+    }
+  },
+  {
+    id: 850069,
+    event: '食堂里伙食太好了，你的体重增加了。',
+    exclude: 'EVT?[850069]',
+    include: 'ENV>2',
+  },
+  {
+    id: 850070,
+    event: '你最近由于体重显著增加，颜值下降。',
+    include: '(ENV>2)&(EVT?[850069])',
+    exclude: '(EVT?[850070])&(TLT?[1122])',
+    effect: {
+      CHR: -1,
+    }
+  },
+  {
+    id: 850071,
+    event: '你最近由于体重显著增加，感觉体力有所下降。',
+    include: '(ENV>2)&(EVT?[850069])',
+    exclude: '(EVT?[850071])&(TLT?[1122])',
+    effect: {
+      STR: -1,
+    }
+  },
+  {
+    id: 850072,
+    event: '你看着自己小腹上日渐增多的赘肉，陷入焦虑。',
+    include: `(ENV>2)&(EVT?[850069])&(${conFemale2}`,
+    exclude: '(EVT?[850072])&(TLT?[1122])',
+    effect: {
+      SPR: -1,
+    }
+  },
+  {
+    id: 850073,
+    event: '你加强了锻炼，重新变得健康，也恢复了颜值和自信。',
+    include: `(ENV>2)&(EVT?[850069])&(${conFemale2}`,
+    exclude: '(EVT?[850073])&(TLT?[1022])',
+    effect: {
+      SPR: 1,
+      CHR: 1,
+      STR: 1,
+    }
+  },
   // --- 女生 ---
   {
     id: 870000,
@@ -2404,6 +2481,12 @@ const eventList = [
     include: `(${conFemale})&(STR>4)`,
     event: '公司组织员工运动会，你报名参加了女子400米接力赛，获得了亚军。',
   },
+  {
+    id: 870011,
+    include: `(${conFemale2})&(CHR>6)&(SPR>6)`,
+    event: '早早起来化了淡妆，对着镜子拍拍脸蛋，自言自语。',
+    postEvent: '今天继续好好努力，不然对不起自己这副倾城容颜。',
+  },
   // --- 男生 ---
   {
     id: 880000,
@@ -2439,7 +2522,7 @@ const eventList = [
   },
   {
     id: 880005,
-    include: `(${conMale})&(CHR>6)`,
+    include: `(${conMale})&(CHR>6)&(SPR>6)`,
     exclude: conFemale2,
     event: '你在路上发现一枚帅哥，仔细一看，原来是镜子里的自己。',
   },
@@ -2652,7 +2735,7 @@ const eventList = [
     id: 131004,
     include: 'EVT?[131003]',
     event: '你确定自己已经坠入爱河。',
-    exclude: `(${conFemale2})|(EVT?[131004])`,
+    exclude: `(${conFemale2})|(EVT?[131004])|(TLT?[1077])`,
     effect: {
       SPR: 1,
     },

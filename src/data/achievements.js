@@ -316,6 +316,115 @@ const achievementList = [
     hide: 0,
     opportunity: "TRAJECTORY"
   },
+  {
+    id: 136,
+    name: "自恋狂",
+    description: "喜欢照镜子",
+    grade: 1,
+    condition: "EVT?[880005,870011]",
+    hide: 0,
+    opportunity: "TRAJECTORY"
+  },
+  {
+    id: 137,
+    name: "提桶跑路",
+    description: "工作不到一年就离开了行业。",
+    grade: 0,
+    condition: "AGE<13",
+    hide: 0,
+    opportunity: "TRAJECTORY"
+  },
+  {
+    id: 138,
+    name: "光荣退休",
+    description: "你在行业工作满50年。",
+    grade: 3,
+    condition: "AGE>599",
+    hide: 0,
+    opportunity: "TRAJECTORY"
+  },
+  {
+    id: 139,
+    name: "十年一梦",
+    description: "坚持了十年，最终离开行业。",
+    grade: 0,
+    condition: "EVT?[999001,999002,999003]",
+    hide: 0,
+    opportunity: "TRAJECTORY"
+  },
+  {
+    id: 140,
+    name: "廿年终悔",
+    description: "坚持了二十年，最终离开行业。",
+    grade: 1,
+    condition: "EVT?[999004,999005,999006]",
+    hide: 0,
+    opportunity: "TRAJECTORY"
+  },
+  {
+    id: 141,
+    name: "卅年人生",
+    description: "坚持了三十年，最终离开行业。",
+    grade: 2,
+    condition: "EVT?[999007,999008,999009]",
+    hide: 0,
+    opportunity: "TRAJECTORY"
+  },
+  {
+    id: 142,
+    name: "成功上岸",
+    description: "你财务自由退休。",
+    grade: 1,
+    condition: "EVT?[999010]",
+    hide: 0,
+    opportunity: "TRAJECTORY"
+  },
+  {
+    id: 143,
+    name: "跳槽一时爽",
+    description: "跳槽达到5次。",
+    grade: 1,
+    condition: "JUMP>4",
+    hide: 0,
+    opportunity: "TRAJECTORY"
+  },
+  {
+    id: 144,
+    name: "白白胖胖",
+    description: "你最可爱。",
+    grade: 1,
+    condition: "(EVT?[850070])&(EVT?[850071])&(EVT?[850072,850073])",
+    hide: 0,
+    opportunity: "TRAJECTORY"
+  },
+  {
+    id: 145,
+    name: '科学家',
+    description: '你转行成为科学家。',
+    grade: 1,
+    condition: 'EVT?[999100,900009]',
+  },
+  {
+    id: 146,
+    name: '悲惨人生',
+    description: '你在工作中死了。',
+    grade: 1,
+    condition: 'EVT?[900008,999999,800000,900001,900011,400016]',
+  },
+  {
+    id: 147,
+    name: '股票帝',
+    description: '你在股票市场赚了大钱。',
+    grade: 2,
+    condition: 'EVT?[420008]'
+  },
+  {
+    id: 148,
+    name: '老韭菜',
+    description: '老股民，在股票市场被收割。',
+    grade: 2,
+    condition: 'EVT?[400014]&EVT?[420000,420001,420004,420009]'
+  }
 ];
 
 export const achievements = map(achievementList);

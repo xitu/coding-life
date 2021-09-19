@@ -113,7 +113,7 @@ const talentList = [
   }, {
     id: 1010,
     name: "富二代",
-    description: "你是富二代，不差钱，收入+2，心态+2",
+    description: "你是富二代，不差钱，财富+2，心态+2",
     grade: 2,
     exclusive: [
       1011,
@@ -125,7 +125,7 @@ const talentList = [
   }, {
     id: 1011,
     name: "养家糊口",
-    description: "你有家庭负担，收入-1",
+    description: "你有家庭负担，财富-1",
     exclusive: [
       1010,
     ],
@@ -312,7 +312,7 @@ const talentList = [
   }, {
     id: 1034,
     name: "家运不顺",
-    description: "收入-2",
+    description: "财富-2",
     grade: 0,
     effect: {
         MNY: -2
@@ -408,7 +408,7 @@ const talentList = [
   }, {
     id: 1051,
     name: "傻人傻福",
-    description: "智力-2，收入+2",
+    description: "智力-2，财富+2",
     grade: 0,
     effect: {
         INT: -2,
@@ -449,7 +449,7 @@ const talentList = [
   }, {
     id: 1058,
     name: "啃老族",
-    description: "即使收入低也能保持好心态",
+    description: "即使财富低也能保持好心态",
     grade: 0,
   }, {
     id: 1059,
@@ -539,9 +539,9 @@ const talentList = [
   },
   {
     id: 1070,
-    name: '生财',
+    name: '智可生财',
     grade: 1,
-    description: '智力>10时收入+3',
+    description: '智力>10时财富+3',
     condition: 'INT>10',
     effect: {
       MNY: 3,
@@ -551,7 +551,7 @@ const talentList = [
     id: 1071,
     name: '进修',
     grade: 1,
-    description: '收入>10时智力+3',
+    description: '财富>10时智力+3',
     condition: 'MNY>10',
     effect: {
       INT: 3,
@@ -571,7 +571,7 @@ const talentList = [
     id: 1073,
     name: '整容',
     grade: 1,
-    description: '收入>10时颜值+3',
+    description: '财富>10时颜值+3',
     condition: 'MNY>10',
     effect: {
       CHR: 3,
@@ -581,7 +581,7 @@ const talentList = [
     id: 1074,
     name: '钻石健身卡',
     grade: 1,
-    description: '收入>10时健康+3',
+    description: '财富>10时健康+3',
     condition: 'MNY>10',
     effect: {
       STR: 3,
@@ -609,9 +609,29 @@ const talentList = [
   },
   {
     id: 1077,
-    event: '矢志不渝',
+    name: '矢志不渝',
     description: '你不会出轨',
     grade: 0,
+  },
+  {
+    id: 1078,
+    name: '生财有道',
+    description: '心态>10时财富+3',
+    grade: 1,
+    condition: 'SPR>10',
+    effect: {
+      MNY: 3,
+    }
+  },
+  {
+    id: 1079,
+    name: '柳暗花明',
+    description: '心态<-4时，心态为1',
+    grade: 3,
+    condition: 'SPR<-4',
+    effect: {
+      SPR: '1!',
+    }
   },
 ];
 

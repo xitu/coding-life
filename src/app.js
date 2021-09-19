@@ -395,7 +395,7 @@ class App{
                     <li><span>颜值</span><span>${property.CHR}</span></li>
                     <li><span>智商</span><span>${property.INT}</span></li>
                     <li><span>健康</span><span>${property.STR}</span></li>
-                    <li><span>收入</span><span>${property.MNY}</span></li>
+                    <li><span>财富</span><span>${property.MNY}</span></li>
                     <li><span>心态</span><span>${property.SPR}</span></li>
                     `);
                 }
@@ -436,7 +436,7 @@ class App{
                 <li class="grade2"><span>颜值：</span><span>9级 美若天仙</span></li>
                 <li class="grade0"><span>智商：</span><span>4级 智力一般</span></li>
                 <li class="grade0"><span>健康：</span><span>1级 极度虚弱</span></li>
-                <li class="grade0"><span>收入：</span><span>6级 小康之家</span></li>
+                <li class="grade0"><span>财富：</span><span>6级 小康之家</span></li>
                 <li class="grade0"><span>司龄：</span><span>3岁 早夭</span></li>
                 <li class="grade0"><span>心态：</span><span></span>3级 不太幸福的人生</li>
             </ul>
@@ -633,7 +633,7 @@ class App{
                         ${format('颜值', 'CHR')}
                         ${format('智力', 'INT')}
                         ${format('体质', 'STR')}
-                        ${format('收入', 'MNY')}
+                        ${format('财富', 'MNY')}
                         ${format('心态', 'SPR')}
                         ${format('工龄', 'AGE')}
                         ${format('总评', 'SUM')}

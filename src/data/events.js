@@ -1765,7 +1765,7 @@ const eventList = [
     id: 400004,
     event: "你觉得房价迟早还要涨，考虑买房。",
     include: '(MNY>3)|(TLT?[1050])',
-    exclude: '(EVT?[400004])&(TLT?[1012])',
+    exclude: '(EVT?[400004])|(TLT?[1012])',
   },
   {
     id: 400005,
@@ -1812,7 +1812,7 @@ const eventList = [
   {
     id: 400009,
     event: '你觉得最近股市还不错，投了点小钱进去。',
-    include: '(MNY>4)|(TLT?[1013])',
+    include: '(MNY>3)|(TLT?[1013])',
     exclude: '(EVT?[400009])|(TLT?[1015])',
     effect: {
       MNY: -1,
@@ -1870,13 +1870,13 @@ const eventList = [
     id: 400011,
     event: '你心灰意冷，决定此生不再碰股市。',
     include: 'EVT?[420004, 420001]',
-    exclude: 'TLT?[1013]',
+    exclude: '(TLT?[1013])|(EVT?[400011,400012])',
   },
   {
     id: 400012,
     event: '你继续投钱进股市。',
     include: 'EVT?[400010]',
-    exclude: '(EVT?[400011,400012])|(MNY<3)',
+    exclude: 'EVT?[400011,400012]',
     effect: {
       MNY: -2
     }
@@ -1915,7 +1915,7 @@ const eventList = [
     id: 400014,
     event: '你继续投钱进股市。',
     include: 'EVT?[400013]',
-    exclude: '(EVT?[400011,400014])|(MNY<3)',
+    exclude: 'EVT?[400011,400014]',
     effect: {
       MNY: -3
     }

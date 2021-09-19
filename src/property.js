@@ -9,7 +9,7 @@ class Property {
         CHR: "CHR", // 颜值 charm CHR
         INT: "INT", // 智力 intelligence INT
         STR: "STR", // 体质 strength STR
-        MNY: "MNY", // 收入 money MNY
+        MNY: "MNY", // 财富 money MNY
         SPR: "SPR", // 心态 spirit SPR
         LIF: "LIF", // 生命 life LIFE
         TLT: "TLT", // 天赋 talent TLT

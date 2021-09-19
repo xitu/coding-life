@@ -577,6 +577,42 @@ const achievementList = [
     hide: 0,
     opportunity: "TRAJECTORY"
   },
+  {
+    id: 165,
+    name: "扫帚星",
+    description: "干黄一家公司。",
+    grade: 1,
+    condition: "EVT?[850059]",
+    hide: 0,
+    opportunity: "TRAJECTORY"
+  },
+  {
+    id: 166,
+    name: "隔壁卧底？",
+    description: "干黄两家公司。",
+    grade: 2,
+    condition: "EVT?[850062]",
+    hide: 0,
+    opportunity: "TRAJECTORY"
+  },
+  {
+    id: 167,
+    name: "老板克星",
+    description: "干黄三家公司。",
+    grade: 3,
+    condition: "EVT?[850065]",
+    hide: 0,
+    opportunity: "TRAJECTORY"
+  },
+  {
+    id: 168,
+    name: "招谁惹谁？",
+    description: "老板和小姨子跑路。",
+    grade: 0,
+    condition: "EVT?[850066]",
+    hide: 0,
+    opportunity: "TRAJECTORY"
+  },
 ];
 
 export const achievements = map(achievementList);

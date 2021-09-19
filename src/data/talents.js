@@ -633,6 +633,21 @@ const talentList = [
       SPR: '1!',
     }
   },
+  {
+    id: 1080,
+    name: '满血复活',
+    description: '你有两条命',
+    grade: 3,
+    effect: {
+      LIF: 2,
+    }
+  },
+  {
+    id: 1081,
+    name: '喵星人',
+    description: '你是只喵星人',
+    grade: 3,
+  },
 ];
 
 export const talents = map(talentList);

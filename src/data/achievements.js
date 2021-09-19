@@ -507,7 +507,7 @@ const achievementList = [
   },
   {
     id: 157,
-    name: '闲不住',
+    name: '第二春',
     description: '退休后去旅游或当老板。',
     grade: 1,
     condition: 'EVT?[999105,999106]',

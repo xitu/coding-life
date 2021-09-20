@@ -360,17 +360,14 @@ const eventList = [
   }, {
     id: 100001,
     event: "你毕业了，成为一名程序猿。",
-    exclude: "TLT?[1004, 1047,1081]",
+    exclude: "TLT?[1004, 1047]",
     // effect: {
     //   SPR: '1000!',
     // },
-    // hook(property) {
-    //   console.log(property);
-    // }
   }, {
     id: 100002,
     event: "你毕业了，成为一名程序媛。",
-    exclude:  "TLT?[1003,2024,1054,1081]",
+    exclude:  "TLT?[1003,2024,1054]",
     // hook(property) {
     //   console.log(property);
     // }
@@ -3115,70 +3112,75 @@ const eventList = [
   },
   {
     id: 999888,
-    event: '你醒了过来，好像做了一个很长的梦。',
+    event: '天赋【满血复活】发动：你醒了过来，好像做了一个很长的梦。',
     include: 'LIF=2',
     postEvent: '你回到了刚毕业找工作的时候，你隐约觉得有些东西不一样，但又好像没变。',
     effect: {
       LIF: -1,
-      AGE: '1!',
+      AGE: '0!',
       WRK: '0!',
       JMP: '0!',
       PRG: '0!',
       ENV: '0!',
+    },
+    hook(property) {
+      let events = property.get('EVT');
+      events = events.filter((e) => e === 100001 || e === 100002 || e === 999888 || e === 888726);
+      if(!events.includes(100001) && !events.includes(100002)) {
+        property.set('AGE', -1);
+      }
+      property.set('EVT', events);
     }
   },
   {
     id: 888700,
     event: '你成年了，是只喵星人。',
     include: 'TLT?[1081]',
-    effect: {
-      INT: '0!',
-      MNY: '0!',
-    }
+    exclude: 'EVT?[999888]',
   },
   {
     id: 888701,
     event: '一位小哥哥把你捡到他的公司里喂养。',
-    include: 'TLT?[1081]',
+    include: 'EVT?[888700]',
     postEvent: '这是一家大公司',
   },
   {
     id: 888702,
     event: '一位小哥哥把你捡到他的公司里喂养。',
     postEvent: '这是一家小公司',
-    include: 'TLT?[1081]',
+    include: 'EVT?[888700]',
   },
   {
     id: 888703,
     event: '一位小姐姐把你捡到她的公司里喂养。',
     postEvent: '这是一家大公司',
-    include: 'TLT?[1081]',
+    include: 'EVT?[888700]',
   },
   {
     id: 888704,
     event: '一位小姐姐把你捡到她的公司里喂养。',
     postEvent: '这是一家小公司',
-    include: 'TLT?[1081]',
+    include: 'EVT?[888700]',
   },
   {
     id: 888705,
     event: '你：喵喵喵，喵喵喵喵',
-    include: 'TLT?[1081]',
+    include: 'EVT?[888700]',
   },
   {
     id: 888706,
     event: '你：喵~喵~喵，喵~喵~喵~喵~',
-    include: 'TLT?[1081]',
+    include: 'EVT?[888700]',
   },
   {
     id: 888707,
     event: '你：喵~喵~喵，喵喵~喵喵~',
-    include: 'TLT?[1081]',
+    include: 'EVT?[888700]',
   },
   {
     id: 888708,
     event: '同事们都很喜欢你，经常喂你小鱼干。',
-    include: 'TLT?[1081]',
+    include: 'EVT?[888700]',
     effect: {
       STR: 1,
     }
@@ -3187,7 +3189,7 @@ const eventList = [
     id: 888709,
     event: '公司环境很好，天气好的时候，你在屋顶晒太阳、玩耍。',
     postEvent: '你过得很健康。',
-    include: 'TLT?[1081]',
+    include: 'EVT?[888700]',
     effect: {
       STR: 1,
     }
@@ -3195,7 +3197,7 @@ const eventList = [
   {
     id: 888710,
     event: '一位粗心的同事不小心把你锁在阁楼上，你从楼顶跳下来的时候受了一点伤。',
-    include: 'TLT?[1081]',
+    include: 'EVT?[888700]',
     effect: {
       STR: -1,
     }
@@ -3203,7 +3205,7 @@ const eventList = [
   {
     id: 888711,
     event: '公司的访客给你乱喂垃圾食品。',
-    include: 'TLT?[1081]',
+    include: 'EVT?[888700]',
     effect: {
       STR: -1,
     }
@@ -3211,22 +3213,22 @@ const eventList = [
   {
     id: 888712,
     event: '你抓了一只麻雀。',
-    include: 'TLT?[1081]',
+    include: 'EVT?[888700]',
   },
   {
     id: 888713,
     event: '你抓了一只老鼠。',
-    include: 'TLT?[1081]',
+    include: 'EVT?[888700]',
   },
   {
     id: 888714,
     event: '你把同事鱼缸里的鱼给偷了。',
-    include: 'TLT?[1081]',
+    include: 'EVT?[888700]',
   },
   {
     id: 888715,
     event: '你追自己尾巴玩。',
-    include: 'TLT?[1081]',
+    include: 'EVT?[888700]',
     effect: {
       SPR: 1,
     }
@@ -3234,7 +3236,7 @@ const eventList = [
   {
     id: 888716,
     event: '同事给你铲屎，帮你撸毛，你舒服地躺在地上。',
-    include: 'TLT?[1081]',
+    include: 'EVT?[888700]',
     effect: {
       SPR: 1,
     }
@@ -3242,7 +3244,7 @@ const eventList = [
   {
     id: 888717,
     event: '你今天淘气地把一个同事吓了一跳，被训了一顿。',
-    include: 'TLT?[1081]',
+    include: 'EVT?[888700]',
     effect: {
       SPR: -1,
     }
@@ -3250,7 +3252,7 @@ const eventList = [
   {
     id: 888718,
     event: '你发情了，喵喵叫，太吵了，同事把你带去宠物医院做了绝育手术。',
-    include: 'TLT?[1081]',
+    include: 'EVT?[888700]',
     exclude: 'EVT?[888718]',
     effect: {
       SPR: -1,
@@ -3259,13 +3261,13 @@ const eventList = [
   {
     id: 888719,
     event: '你踩在一位同事的键盘上，帮她修好了一个bug。',
-    include: 'TLT?[1081]',
+    include: 'EVT?[888700]',
   },
   {
     id: 888720,
     event: '你的年龄不小了，感觉身体不如从前。',
     postEvent: '同事格外照顾你。',
-    include: '(TLT?[1081])&(AGE>59)',
+    include: '(EVT?[888700])&(AGE>59)',
     exclude: 'EVT?[888720]',
     effect: {
       STR: -1,
@@ -3274,7 +3276,7 @@ const eventList = [
   {
     id: 888721,
     event: '你生病了，一位同事带你去看兽医。',
-    include: '(TLT?[1081])&(AGE>23)',
+    include: '(EVT?[888700])&(AGE>23)',
     exclude: 'EVT?[888721]',
     effect: {
       STR: -1,
@@ -3283,7 +3285,7 @@ const eventList = [
   {
     id: 888722,
     event: '你恢复得还不错。',
-    include: '(TLT?[1081])&(EVT?[888721])',
+    include: '(EVT?[888700])&(EVT?[888721])',
     exclude: 'EVT?[888722]',
     effect: {
       STR: 1,
@@ -3292,7 +3294,7 @@ const eventList = [
   {
     id: 888723,
     event: '你的反应下降了，也不爱吃猫粮了。',
-    include: 'AGE>83',
+    include: '(EVT?[888700])&(AGE>83)',
     exclude: 'EVT?[888723]',
     effect: {
       STR: -1,
@@ -3301,7 +3303,7 @@ const eventList = [
   {
     id: 888724,
     event: '你身体灵敏度下降，不小心摔了一跤。',
-    include: 'AGE>83',
+    include: '(EVT?[888700])&(AGE>83)',
     effect: {
       STR: -1,
     },
@@ -3309,7 +3311,7 @@ const eventList = [
   {
     id: 888725,
     event: '你的食量越来越小。',
-    include: 'AGE>83',
+    include: '(EVT?[888700])&(AGE>83)',
     effect: {
       STR: -1,
     },
@@ -3318,10 +3320,14 @@ const eventList = [
     id: 888726,
     event: '你离开了这个世界。',
     postEvent: '公司的同事都很难过，他们把你葬在院子里，给你立了一个小墓碑，感谢你这些年给他们带去的欢乐。',
-    include: '(STR<0)|(AGE>119)',
+    include: '(EVT?[888700])',
+    exclude: '(STR>0)&(AGE<120)',
     effect: {
       LIF: -1,
     },
+    branch: [
+      'LIF>1:999888',
+    ]
   },
 ];
 

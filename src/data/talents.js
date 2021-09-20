@@ -647,6 +647,9 @@ const talentList = [
     name: '喵星人',
     description: '你是只喵星人',
     grade: 3,
+    // effect: {
+    //   LIF: 2,
+    // }
   },
 ];
 

@@ -613,6 +613,24 @@ const achievementList = [
     hide: 0,
     opportunity: "TRAJECTORY"
   },
+  {
+    id: 169,
+    name: "涅槃",
+    description: "你重生了。",
+    grade: 1,
+    condition: "EVT?[999888]",
+    hide: 0,
+    opportunity: "TRAJECTORY"
+  },
+  {
+    id: 170,
+    name: "猫妖转世",
+    description: "你上辈子是喵星人。",
+    grade: 3,
+    condition: "(EVT?[888726])&(EVT?[999888])",
+    hide: 0,
+    opportunity: "TRAJECTORY"
+  },
 ];
 
 export const achievements = map(achievementList);

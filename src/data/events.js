@@ -3112,12 +3112,12 @@ const eventList = [
   },
   {
     id: 999888,
-    event: '天赋【满血复活】发动：你醒了过来，好像做了一个很长的梦。',
+    event: '天赋【满血复活】发动：你醒了过来，在校园草坪上，好像做了个长长的梦。你记起今天刚和同学们拍完毕业照，你们这一届同学即将离开校园，走上社会。',
     include: 'LIF=2',
-    postEvent: '你回到了刚毕业找工作的时候，你隐约觉得有些东西不一样，但又好像没变。',
+    postEvent: '你努力回想刚才做的梦，好像很真实，但又记不清。你隐约觉得有些东西不一样，但又似乎什么都没变。。。',
     effect: {
       LIF: -1,
-      AGE: '0!',
+      AGE: '-1!',
       WRK: '0!',
       JMP: '0!',
       PRG: '0!',
@@ -3125,10 +3125,7 @@ const eventList = [
     },
     hook(property) {
       let events = property.get('EVT');
-      events = events.filter((e) => e === 100001 || e === 100002 || e === 999888 || e === 888726);
-      if(!events.includes(100001) && !events.includes(100002)) {
-        property.set('AGE', -1);
-      }
+      events = events.filter((e) => e === 999888 || e === 888726);
       property.set('EVT', events);
     }
   },

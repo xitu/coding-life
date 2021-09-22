@@ -3052,7 +3052,7 @@ const eventList = [
   {
     id: 1110018,
     event: '经过锻炼和实战打磨，你进化成了三代神体',
-    include: '(EVT?[1110010])&(STR>120)',
+    include: '(EVT?[1110017])&(STR>120)',
     exclude: 'EVT?[1110018]',
     effect: {
       SPR: 10,

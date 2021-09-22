@@ -2375,7 +2375,7 @@ const eventList = [
     id: 850070,
     event: '你最近由于体重显著增加，颜值下降。',
     include: '(ENV>2)&(EVT?[850069])',
-    exclude: '(EVT?[850070])&(TLT?[1122])',
+    exclude: '(EVT?[850070])|(TLT?[1122])',
     effect: {
       CHR: -1,
     }
@@ -2384,7 +2384,7 @@ const eventList = [
     id: 850071,
     event: '你最近由于体重显著增加，感觉体力有所下降。',
     include: '(ENV>2)&(EVT?[850069])',
-    exclude: '(EVT?[850071])&(TLT?[1122])',
+    exclude: '(EVT?[850071])|(TLT?[1122])',
     effect: {
       STR: -1,
     }
@@ -2392,8 +2392,8 @@ const eventList = [
   {
     id: 850072,
     event: '你看着自己小腹上日渐增多的赘肉，陷入焦虑。',
-    include: `(ENV>2)&(EVT?[850069])&(${conFemale2}`,
-    exclude: '(EVT?[850072])&(TLT?[1122])',
+    include: `(ENV>2)&(EVT?[850069])&(${conFemale2})`,
+    exclude: '(EVT?[850072])|(TLT?[1122])',
     effect: {
       SPR: -1,
     }
@@ -2401,8 +2401,8 @@ const eventList = [
   {
     id: 850073,
     event: '你加强了锻炼，重新变得健康，也恢复了颜值和自信。',
-    include: `(ENV>2)&(EVT?[850069])&(${conFemale2}`,
-    exclude: '(EVT?[850073])&(TLT?[1022])',
+    include: `(ENV>2)&(EVT?[850069])&(${conFemale2})`,
+    exclude: '(EVT?[850073])|(TLT?[1022])',
     effect: {
       SPR: 1,
       CHR: 1,
@@ -2486,6 +2486,20 @@ const eventList = [
     event: '早早起来化了淡妆，对着镜子拍拍脸蛋，自言自语。',
     postEvent: '今天继续好好努力，不然对不起自己这副倾城容颜。',
   },
+  {
+    id: 870012,
+    event: '你跟男票说，你想要一支MAC。',
+    postEvent: '你男票给你买了一台Macbook Pro。',
+    include: `${conFemale2}`,
+    exclude: 'EVT?[850012,850013,220000]',
+  },
+  {
+    id: 870013,
+    event: '你跟老公说，你想要一支MAC。',
+    postEvent: '他给你买来一台Macbook Pro。',
+    include: `(${conFemale2})&(EVT?[220000])`,
+    exclude: 'EVT?[850012,850013]',
+  },
   // --- 男生 ---
   {
     id: 880000,
@@ -2542,6 +2556,20 @@ const eventList = [
     id: 880008,
     include: `(${conMale})&(STR>4)`,
     event: '公司组织员工运动会，你报名参加了男子1500米长跑，获得了亚军。',
+  },
+  {
+    id: 880009,
+    event: '你女友对你说，她想要一支MAC。',
+    postEvent: '你给她买了一台Macbook Pro。',
+    include: `${conMale}`,
+    exclude: 'EVT?[870009,870010,220000]',
+  },
+  {
+    id: 880010,
+    event: '你妻子对你说，她想要一支MAC。',
+    postEvent: '你给她买了一台Macbook Pro。',
+    include: `(${conMale})&(EVT?[220000])`,
+    exclude: 'EVT?[870009,870010]',
   },
   // ---- 掘金 ----
   {

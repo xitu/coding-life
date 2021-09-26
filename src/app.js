@@ -2,6 +2,44 @@ import { summary } from './functions/summary.js';
 import { getGrade } from './functions/addition.js';
 import { specialthanks } from './data/specialthanks.js';
 import Life from './life.js';
+import svgNumber from './svgNumber.js';
+
+const numberToSvg = (number) => {
+    return number.toString().split('').map(num => svgNumber['svg' + num]);
+}
+
+const DATA = [[1,'红砖级','霉霉','码农'],
+    [11,'红砖级','懒懒','码农'],
+    [21,'红砖级','丧丧','码农'],
+    [41,'青铜级','躺躺','码工'],
+    [61,'青铜级','平平','码工'],
+    [81,'青铜级','呆呆','码工'],
+    [111,'白银级','乐乐','程序猿'],
+    [141,'白银级','忙忙','程序猿'],
+    [171,'白银级','卷卷','程序猿'],
+    [211,'黄金级','艰苦','攻城师'],
+    [251,'黄金级','奋斗','攻城师'],
+    [291,'黄金级','不懈','攻城师'],
+    [341,'铂金级','勇敢','CXO'],
+    [391,'铂金级','蓬勃','CXO'],
+    [441,'铂金级','顶尖','CXO'],
+    [501,'宝钻级','淡然','码神'],
+    [561,'宝钻级','无敌','码神'],
+    [621,'宝钻级','寂寞','码神']];
+const getTitle = (grade) => {
+    const len = DATA.length;
+    for(let i = 0; i < len; i++){
+        if(grade >= DATA[i][0] && !DATA[i+1]){
+            const data = DATA[i];
+            return `我已获「${data[1]}${data[2]}${data[3]}」称号!`
+        }else if(grade >= DATA[i][0] && grade < DATA[i + 1][0]){
+            const data = DATA[i];
+            return `我已获「${data[1]}${data[2]}${data[3]}」称号!`
+        }else if(grade > DATA[i][0] && grade > DATA[i + 1][0]){
+            continue;
+        }
+    }
+}
 
 class App{
     constructor(){
@@ -24,6 +62,7 @@ class App{
         await this.#life.initial();
         this.#specialthanks = specialthanks;
         this.switch('index');
+        // this.switch('share')
         globalThis.onerror = (event, source, lineno, colno, error) => {
             this.hint(`[ERROR] at (${source}:${lineno}:${colno})\n\n${error?.stack||error||'unknow Error'}`, 'error');
         }
@@ -52,14 +91,16 @@ class App{
         // Index
         const indexPage = $(`
         <div id="main">
-            <button id="achievement">成就</button>
             <button id="specialthanks">特别感谢</button>
             <button id="themeToggleBtn">黑</button>
             <div id="title">
                 码农搬砖模拟器<br>
                 <div style="font-size:1.5rem; font-weight:normal;">如果不是家里穷，我也不想当码农</div>
             </div>
-            <button id="restart" class="mainbtn"><span class="iconfont">&#xe6a7;</span>立即重开</button>
+            <div style="position:fixed;top:65%;left:0;display:flex;">
+                <button id="restart" class="mainbtn"><span class="iconfont">&#xe6a7;</span>立即重开</button>
+                <button id="achievement" class="mainbtn">已解锁成就</button>
+            </div>
             <a id="discord" href="https://juejin.cn/pin/club/7009157550285258766" style="z-index: 9999;" aria-label="Chat on Discord"><button class="discord-btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="64" viewBox="0 0 94.011 74.831">
             <g transform="scale(0.9,0.9) translate(-297.913 -2489.466)">
@@ -68,7 +109,7 @@ class App{
               <path d="M344.918,2551.693h0l-.012.01-39.078-30.833-7.915,6.358.761.6,46.244,36.468h0l29.223-23.056,17.782-14.03-7.917-6.357Z" fill="#fff"/>
             </g>
             </svg>
-            CHAT</button><style>.discord-btn {position: fixed;bottom: 0.5rem;left: 0.5rem;background-color: #5865F2;padding: 0.7rem;height: auto;color: white;text-align: right;vertical-align: middle;border: none;width: 6.5rem;font-size: 1rem;border-radius: 4px;}.discord-btn svg {height: 1.5rem;position: absolute;top: 50%;left: 0;transform: translateY(-50%);}.discord-btn:hover svg{animation:discord-wave 560ms ease-in-out;}@keyframes discord-wave{0%,100%{transform:translateY(-50%) rotate(0)}20%,60%{transform:translateY(-50%) rotate(-25deg)}40%,80%{transform:translateY(-50%) rotate(10deg)}}@media (max-width:500px){.discord-btn:hover svg{animation:none}.discord-btn svg{animation:discord-wave 560ms ease-in-out}}</style></a>
+            CHAT</button><style>.discord-btn {position: fixed;bottom: 3.2rem;left: 0.5rem;background-color: #5865F2;padding: 0.7rem;height: auto;color: white;text-align: right;vertical-align: middle;border: none;width: 6.5rem;font-size: 1rem;border-radius: 4px;}.discord-btn svg {height: 1.5rem;position: absolute;top: 50%;left: 0;transform: translateY(-50%);}.discord-btn:hover svg{animation:discord-wave 560ms ease-in-out;}@keyframes discord-wave{0%,100%{transform:translateY(-50%) rotate(0)}20%,60%{transform:translateY(-50%) rotate(-25deg)}40%,80%{transform:translateY(-50%) rotate(10deg)}}@media (max-width:500px){.discord-btn:hover svg{animation:none}.discord-btn svg{animation:discord-wave 560ms ease-in-out}}</style></a>
         </div>
         `);
 
@@ -353,7 +394,7 @@ class App{
             <ul id="lifeProperty" class="lifeProperty"></ul>
             <ul id="lifeTrajectory" class="lifeTrajectory"></ul>
             <div class="btn-area">
-                <button id="summary" class="mainbtn">人生总结</button>
+                <button id="summary" class="mainbtn">搬砖生涯总结</button>
                 <button id="domToImage" class="mainbtn">人生回放</button>
             </div>
             <div class="domToImage2wx">
@@ -428,10 +469,159 @@ class App{
                 this.switch('summary');
             });
 
+        const playAgain = ()=>{
+            this.times ++;
+            this.#life.talentExtend(this.#selectedExtendTalent);
+            this.#selectedExtendTalent = null;
+            this.#talentSelected.clear();
+            this.#totalMax = 20;
+            this.#isEnd = false;
+            this.switch('index');
+        }
+        // 分享结果页
+        const sharePage = $(`
+        <div id="main" class="share">
+            <div class="content" style="margin-top:35px;">
+                <div class="logo">
+                    <img
+                        src="https://lf9-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/logo.png" />
+                </div>
+                <div class="bannerImg">
+                    <img
+                        src="https://lf9-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/banner.png" />
+                </div>
+                <div class="slogan" style="color: #595959;">////////////////如果不是家里穷·我也不想当码农</div>
+                <div class="result">
+                    <div class="scope">
+                        <img
+                            src="https://lf9-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/result.png" />
+                    </div>
+                    <div class="text">
+               
+                    </div>
+                </div>
+                <div class="talents">
+                    <div class="header">{此生天赋.}</div>
+                </div>
+                <div class="index">
+                    <div class="header">{各项指标.}</div>
+                    <div class="summary">
+                        <div class="desc">我已获「红砖级霉霉码农」称号!</div>
+                        <div class="desc">此生总评<span class="grade">120</span>分</div>
+                    </div>
+                    <div class="cont">
+                        <div class="left">
+                            <div class="item zhili">
+                                <img class="bg" src="https://lf9-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/zhili.png" />
+                                <span class="text desc">是否</span>
+                                <span class="text count"></span>
+                            </div>
+                            <div class="item tizhi">
+                                <img class="bg" src="https://lf9-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/tizhi.png" />
+                                <span class="text desc purple">是否</span>
+                                <span class="text count"></span>
+                            </div>
+                            <div class="item xintai">
+                                <img class="bg" src="https://lf9-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/xintai.png" />
+                                <span class="text desc">是否</span>
+                                <span class="text count"></span>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="item yanzhi">
+                                <img class="bg" src="https://lf9-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/yanzhi.png" />
+                                <span class="text desc purple">水电</span>
+                                <span class="text count"></span>
+                            </div>
+                            <div class="item caifu">
+                                <img class="bg" src="https://lf9-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/caifu.png" />
+                                <span class="text desc">是否</span>
+                                <span class="text count"></span>
+                            </div>
+                            <div class="item gongling">
+                                <img class="bg" src="https://lf9-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/gongling.png" />
+                                <span class="text desc">切我</span>
+                                <span class="text count"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="divide">//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</div>
+                <div class="erweima">
+                    <div class="item">
+                        <div class="image">
+                            <img src="https://lf9-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/dashen.png" />
+                        </div>
+                        围观大神
+                    </div>
+                    <div class="item">
+                        <div class="image">
+                            <img src="https://lf9-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/banzhuan.png" />
+                        </div>
+                        模拟搬砖
+                    </div>
+                </div>
+                <div class="footer">电脑端请登录_ https://juejin.cn/game/coding-life</div>
+                <div id="moreBtn" style="display:flex;">
+                    <button id="save" class="mainbtn" style="flex:1;">保存图片</button>
+                    <button id="goRestart" class="mainbtn" style="flex:1;">返回游戏</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="domToImage2wx" style="top:0;display:none; box-sizing:border-box;overflow:scroll;height:100%;">
+            <p style="position:absolute;color:#de4141;width:100%;text-align:center;font-size:1.6rem;">长按图片保存</p>
+            <span class="close" style="position:fixed;top:0.3rem;right:0.3rem;">
+                <svg style="font-size:2rem;color:#666;" viewBox="64 64 896 896" focusable="false" data-icon="close-circle" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M685.4 354.8c0-4.4-3.6-8-8-8l-66 .3L512 465.6l-99.3-118.4-66.1-.3c-4.4 0-8 3.5-8 8 0 1.9.7 3.7 1.9 5.2l130.1 155L340.5 670a8.32 8.32 0 00-1.9 5.2c0 4.4 3.6 8 8 8l66.1-.3L512 564.4l99.3 118.4 66 .3c4.4 0 8-3.5 8-8 0-1.9-.7-3.7-1.9-5.2L553.5 515l130.1-155c1.2-1.4 1.8-3.3 1.8-5.2z"></path><path d="M512 65C264.6 65 64 265.6 64 513s200.6 448 448 448 448-200.6 448-448S759.4 65 512 65zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"></path></svg>
+            </span>
+            <img src="" id="endImage" />
+        </div>
+        `);
+        sharePage
+            .find('#save')
+            .click(()=>{
+                $("#moreBtn").hide();
+                // $("#lifeTrajectory").addClass("deleteFixed");
+                const ua = navigator.userAgent.toLowerCase();
+                domtoimage.toJpeg(document.getElementById('main'))
+                    .then(function (dataUrl) {
+
+
+                        $("#moreBtn").show();
+                        // $("#lifeTrajectory").removeClass("deleteFixed");
+
+                        const isWeixin = ua.match(/MicroMessenger/i)=="micromessenger";
+                        const isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
+
+
+                        // 微信内置浏览器，显示图片，需要用户单独保存
+                        if(isWeixin || isMobile) {
+                            // $('.domToImage2wx').css({'border':'solid 5px yellow','background':'red', height: '100%', 'overflow':'scroll', 'box-sizing':'border-box'})
+                            $('#endImage').attr('src', dataUrl);
+                            $('.domToImage2wx').show();
+                        }else{
+                            download(dataUrl, "coding-life.png", "image/png");
+                        }
+
+                    });
+            })
+        sharePage
+            .find('#goRestart')
+            .click(()=>{
+                playAgain();
+                $('.github-corner').show();
+                $('body').css({'height': '100%'})
+            })
+        sharePage
+            .find('.close')
+            .click(()=>{
+                $('.domToImage2wx').hide();
+            })
+
         // Summary
         const summaryPage = $(`
         <div id="main">
-            <div class="head">人生总结</div>
+            <div class="head">搬砖生涯总结</div>
             <ul id="judge" class="judge">
                 <li class="grade2"><span>颜值：</span><span>9级 美若天仙</span></li>
                 <li class="grade0"><span>智商：</span><span>4级 智力一般</span></li>
@@ -444,21 +634,68 @@ class App{
             <ul id="talents" class="selectlist" style="flex: 0 1 auto;">
                 <li class="grade2b">黑幕（面试一定成功）</li>
             </ul>
-            <button id="again" class="mainbtn"><span class="iconfont">&#xe6a7;</span>再次重开</button>
+            <div style="display:flex;">
+                <button id="again" class="mainbtn" style="flex:1;"><span class="iconfont">&#xe6a7;</span>再次重开</button>
+                <button id="share" class="mainbtn" style="flex:1;"><span class="iconfont">&#xe6a7;</span>分享</button>        
+            </div>
+            <div style="margin:0 1rem 1rem;">
+                <a target="_blank" href="https://conf.juejin.cn/xdc2021?utm_source=life" style="color: #fff;text-decoration: none;border: solid 0.2rem;display: block;border-radius: 0.2rem;">围观大神搬砖</a>
+            </div>
         </div>
         `);
 
         summaryPage
             .find('#again')
             .click(()=>{
-                this.times ++;
-                this.#life.talentExtend(this.#selectedExtendTalent);
-                this.#selectedExtendTalent = null;
-                this.#talentSelected.clear();
-                this.#totalMax = 20;
-                this.#isEnd = false;
-                this.switch('index');
+                playAgain();
             });
+
+        summaryPage
+            .find('#share')
+            .click(()=>{
+                this.switch('share');
+                $('.github-corner').hide();
+                $('body').css({'height': 'auto'})
+
+                const talents = this.#talentSelected;
+                const summaryData = this.#life.getSummary();
+                // console.log(talents, summaryData)
+
+                const arrTalentHtml = [];
+                [...talents].forEach((talent, index) => {
+                    arrTalentHtml.push(`
+                        <div class="item">
+                            <div class="name">${talent.name}</div>
+                            <div class="desc">${talent.description}</div>
+                        </div>
+                    `)
+                })
+                sharePage.find('.talents').append(arrTalentHtml.join(''))
+                
+                const arrResultSvg = numberToSvg(summaryData.AGE)
+                sharePage.find('.result .text').html(arrResultSvg.join(''));
+
+                const arrSummarySvg = numberToSvg(summaryData.SUM);
+                sharePage.find('.index .summary .desc').eq(0).html(getTitle(summaryData.SUM))
+                sharePage.find('.index .summary .grade').html(arrSummarySvg.join(''));
+
+                const obj = {
+                    'CHR': 'yanzhi',
+                    'INT': 'zhili', 
+                    'STR': 'tizhi', 
+                    'MNY': 'caifu', 
+                    'SPR': 'xintai', 
+                    'AGE': 'gongling'
+                }
+                Object.keys(obj).forEach(item => {
+                    const {judge} = summary(item, summaryData[item]);
+                    const $el = sharePage.find('.index .' + obj[item]);
+
+                    $el.find('.desc').html(judge);
+                    $el.find('.count').html(numberToSvg(summaryData[item]));
+                })
+
+            })
 
         this.#pages = {
             loading: {
@@ -636,10 +873,16 @@ class App{
                         ${format('财富', 'MNY')}
                         ${format('心态', 'SPR')}
                         ${format('工龄', 'AGE')}
-                        ${format('总评', 'SUM')}
+                        ${format('总搬砖力', 'SUM')}
                     `);
                 }
             },
+            share: {
+                page: sharePage,
+                clear: ()=>{
+                    
+                }
+            }
         }
 
         $$on('achievement', ({name})=>{
@@ -677,10 +920,12 @@ class App{
     setTheme(theme) {
         const themeLink = $(document).find('#themeLink');
 
+        let basePath = 'https://lf9-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/';
+        
         if(theme == 'light') {
-            themeLink.attr('href', 'light.css');
+            themeLink.attr('href', basePath + 'light.css');
         } else {
-            themeLink.attr('href', 'dark.css');
+            themeLink.attr('href', basePath + 'dark.css');
         }
     }
 

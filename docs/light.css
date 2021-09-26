@@ -38,9 +38,9 @@
 
 @font-face {
   font-family: 'iconfont';
-  src: url('iconfont.woff2?t=1628944689555') format('woff2'),
-    url('iconfont.woff?t=1628944689555') format('woff'),
-    url('iconfont.ttf?t=1628944689555') format('truetype');
+  src: url('https://lf3-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/iconfont.woff2?t=1628944689555') format('woff2'),
+    url('https://lf3-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/iconfont.woff?t=1628944689555') format('woff'),
+    url('https://lf3-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/iconfont.ttf?t=1628944689555') format('truetype');
 }
 
 * {
@@ -82,7 +82,7 @@ body {
   position: fixed;
   top: 65%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-60%, -50%);
 }
 
 #restart .iconfont {
@@ -137,7 +137,7 @@ body {
 #specialthanks,
 #achievement {
   position: fixed;
-  top: 4rem;
+  top: 4.38rem;
   right: 1rem;
   padding: 0.1rem;
   width: 6rem;
@@ -153,7 +153,7 @@ body {
 
 #specialthanks {
   background-color: #5865F2;
-  top: 1rem;
+  top: 2rem;
 }
 
 .sponsor {

@@ -38,9 +38,9 @@
 
 @font-face {
   font-family: 'iconfont';
-  src: url('https://lf3-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/iconfont.woff2?t=1628944689555') format('woff2'),
-    url('https://lf3-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/iconfont.woff?t=1628944689555') format('woff'),
-    url('https://lf3-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/iconfont.ttf?t=1628944689555') format('truetype');
+  src: url('https://lf9-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/iconfont.woff2?t=1628944689555') format('woff2'),
+    url('https://lf9-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/iconfont.woff?t=1628944689555') format('woff'),
+    url('https://lf9-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/iconfont.ttf?t=1628944689555') format('truetype');
 }
 
 * {
@@ -79,10 +79,10 @@ body {
 }
 
 #restart {
-  position: fixed;
+  /* position: fixed;
   top: 65%;
   left: 50%;
-  transform: translate(-60%, -50%);
+  transform: translate(-60%, -50%); */
 }
 
 #restart .iconfont {
@@ -133,18 +133,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.sponsor,
-#specialthanks,
-#achievement {
+.sponsor
+{
   position: fixed;
-  top: 4.38rem;
+  top: 3.8rem;
   right: 1rem;
   padding: 0.1rem;
   width: 6rem;
   border: none;
   border-radius: 0.2rem;
   background-color:lightsteelblue;
-  font-size: 1.4rem;
+  font-size: 1.0rem;
   color: #EEEEEE;
   cursor: pointer;
   z-index:2;
@@ -152,8 +151,19 @@ body {
 }
 
 #specialthanks {
+  position: fixed;
+  left:0.5rem;
+  bottom:0.5rem;
+  padding: 0.2rem;
+  width: 6.5rem;
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 1.4rem;
+  color: #EEEEEE;
+  cursor: pointer;
+  z-index:2;
+  word-wrap: none;
   background-color: #5865F2;
-  top: 2rem;
 }
 
 .sponsor {
@@ -374,7 +384,7 @@ ul#total li .achievementtitle,
 
 .judge>li>span:nth-child(1),
 .lifeTrajectory>li>span:nth-child(1) {
-  width: 5rem;
+  width: 7rem;
   text-align: right;
 }
 .judge>li>span:nth-child(2),

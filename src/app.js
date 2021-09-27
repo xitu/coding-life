@@ -97,7 +97,7 @@ class App{
                 码农搬砖模拟器<br>
                 <div style="font-size:1.5rem; font-weight:normal;">如果不是家里穷，我也不想当码农</div>
             </div>
-            <div style="width:100%;position:fixed;top:65%;left:0;display:flex;">
+            <div style="width:100%;position:fixed;top:65%;left:50%;display:flex;max-width:800px;transform:translate(-50%,0);">
                 <button id="restart" class="mainbtn" style="flex:1;"><span class="iconfont">&#xe6a7;</span>立即重开</button>
                 <button id="achievement" class="mainbtn" style="flex:1;">已解锁成就</button>
             </div>

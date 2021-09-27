@@ -6,9 +6,11 @@ const svg0 = `<svg version="1.1" fill="currentColor" viewBox="0 0 66.4 107.1" xm
 	 M66.4,67.8V80H54.2V67.8H66.4z M66.4,81.3v12.2H54.2V81.3H66.4z"/>
 </svg>`
 const svg1 = `<svg version="1.1" fill="currentColor" viewBox="0 0 66.4 107.1" xml:space="preserve">
-<path d="M12.2,13.5v12.2H0V13.5H12.2z M12.2,94.9v12.2H0V94.9H12.2z M25.8,0v12.2H13.6V0L25.8,0z M25.8,13.6v12.2H13.6V13.5
+	<g transform="translate(13)">
+    <path d="M12.2,13.5v12.2H0V13.5H12.2z M12.2,94.9v12.2H0V94.9H12.2z M25.8,0v12.2H13.6V0L25.8,0z M25.8,13.6v12.2H13.6V13.5
 	L25.8,13.6z M25.8,27.1v12.2H13.6V27.1L25.8,27.1z M25.8,40.7v12.2H13.6V40.7H25.8z M25.8,54.2v12.2H13.6V54.2H25.8z M25.8,67.8V80
 	H13.6V67.8H25.8z M25.8,81.3v12.2H13.6V81.3H25.8z M25.8,94.9v12.2H13.6V94.9H25.8z M39.3,94.9v12.2H27.1V94.9H39.3z"/>
+    </g>
 </svg>`
 const svg2 = `<svg version="1.1" fill="currentColor" viewBox="0 0 66.4 107.1" xml:space="preserve">
 <path d="M12.2,13.6v12.2H0V13.6H12.2z M12.2,27.1v12.2H0V27.1H12.2z M12.2,81.3v12.2H0V81.3L12.2,81.3z M12.2,94.9v12.2H0V94.9H12.2

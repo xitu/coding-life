@@ -97,9 +97,9 @@ class App{
                 码农搬砖模拟器<br>
                 <div style="font-size:1.5rem; font-weight:normal;">如果不是家里穷，我也不想当码农</div>
             </div>
-            <div style="position:fixed;top:65%;left:0;display:flex;">
-                <button id="restart" class="mainbtn"><span class="iconfont">&#xe6a7;</span>立即重开</button>
-                <button id="achievement" class="mainbtn">已解锁成就</button>
+            <div style="width:100%;position:fixed;top:65%;left:0;display:flex;">
+                <button id="restart" class="mainbtn" style="flex:1;"><span class="iconfont">&#xe6a7;</span>立即重开</button>
+                <button id="achievement" class="mainbtn" style="flex:1;">已解锁成就</button>
             </div>
             <a id="discord" href="https://juejin.cn/pin/club/7009157550285258766" style="z-index: 9999;" aria-label="Chat on Discord"><button class="discord-btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="64" viewBox="0 0 94.011 74.831">
@@ -723,14 +723,14 @@ class App{
 
                     if(times > 0) {
                         achievement.show();
-                        discord.show();
-                        specialthanks.show();
+                        // discord.show();
+                        // specialthanks.show();
                         return;
                     }
 
                     achievement.hide();
-                    discord.hide();
-                    specialthanks.hide();
+                    // discord.hide();
+                    // specialthanks.hide();
                 },
             },
             specialthanks: {
@@ -923,9 +923,9 @@ class App{
         let basePath = 'https://lf9-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/';
         
         if(theme == 'light') {
-            themeLink.attr('href', basePath + 'light.css');
+            themeLink.attr('href', basePath + 'light.css?ver=1');
         } else {
-            themeLink.attr('href', basePath + 'dark.css');
+            themeLink.attr('href', basePath + 'dark.css?ver=1');
         }
     }
 

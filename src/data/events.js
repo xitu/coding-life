@@ -2526,7 +2526,7 @@ const eventList = [
     id: 880001,
     include: conMale,
     exclude: conFemale2,
-    event: '下班去踢球，一脚开球把LD加的窗户玻璃砸碎了。',
+    event: '下班去踢球，一脚开球把LD家的窗户玻璃砸碎了。',
     postEvent: '趁LD在加班，赶快溜走。',
   },
   {

@@ -662,6 +662,8 @@ class App{
                 const summaryData = this.#life.getSummary();
                 // console.log(talents, summaryData)
 
+                console.log(this.hightlight());
+
                 const arrTalentHtml = [];
                 [...talents].forEach((talent, index) => {
                     arrTalentHtml.push(`
@@ -916,6 +918,20 @@ class App{
                 this.#hintTimeout = setTimeout(hideBanners, 3000);
             }
         });
+    }
+
+    hightlight() {
+        const highlightContents = this.#life.getHighLightContents(5);
+        return highlightContents.map(({age, content}) => [age, content.map(
+            ({type, description, name, postEvent}) => {
+                switch(type) {
+                    case 'TLT':
+                        return `天赋【${name}】发动：${description}`;
+                    case 'EVT':
+                        return description + (postEvent?`<br>${postEvent}`:'');
+                }
+            }).join('<br>')]
+        );
     }
 
     setTheme(theme) {

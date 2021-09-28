@@ -13,6 +13,7 @@ class Life {
         this.#event = new Event();
         this.#talent = new Talent();
         this.#achievement = new Achievement();
+        this.#highlight = [];
     }
 
     #property;
@@ -20,6 +21,7 @@ class Life {
     #talent;
     #achievement;
     #triggerTalents;
+    #highlight;
 
     async initial() {
         this.#property.initial({age});
@@ -62,7 +64,23 @@ class Life {
             this.#achievement.Opportunity.TRAJECTORY,
             this.#property
         )
-        return { age, content, isEnd };
+    
+        if(eventContent.some(e => e.highlight)) {
+            this.#highlight.push({age, content});
+        }
+        // console.log(eventContent, this.#highlight);
+
+        return { age, content, isEnd,  };
+    }
+
+    getHighLightContents(maxCount = 5) {
+        const highlights = [...this.#highlight];
+        const ret = [];
+        for(let i = 0; i < maxCount && i < highlights.length; i++) {
+            const pick = Math.floor(Math.random() * highlights.length);
+            ret.push(highlights.splice(pick, 1)[0]);
+        }
+        return ret.sort((a, b) => a.age - b.age);
     }
 
     doTalent(talents) {
@@ -89,13 +107,14 @@ class Life {
     }
 
     doEvent(eventId) {
-        const { effect, next, description, postEvent, hook } = this.#event.do(eventId, this.#property);
+        const { effect, next, description, postEvent, hook, highlight } = this.#event.do(eventId, this.#property);
         this.#property.change(this.#property.TYPES.EVT, eventId);
         this.#property.effect(effect);
         const content = {
             type: this.#property.TYPES.EVT,
             description,
             postEvent,
+            highlight: highlight && !this.#property.get('EVT').slice(0, -1).includes(eventId),
         }
         if(next) return [content, this.doEvent(next)].flat();
         // add hook

@@ -95,41 +95,49 @@ const eventList = [
     id: 999100,
     event: "你退休了，在学术上深入研究，成为了科学家。",
     branch: retireGameOver2,
+    highlight: 1,
   },
   {
     id: 999101,
     event: "你退休了，一所民办学校返聘你为教授。",
     branch: retireGameOver2,
+    highlight: 1,
   },
   {
     id: 999102,
     event: "你退休了，因为对创作感兴趣，成为了网络作家。",
     branch: retireGameOver2,
+    highlight: 1,
   },
   {
     id: 999103,
     event: "你退休了，研究哲学，成为了哲学家。",
     branch: retireGameOver2,
+    highlight: 1,
   },
   {
     id: 999104,
     event: "你退休了，依然活跃在网络上，成为了社交平台的红人。",
     branch: retireGameOver2,
+    highlight: 1,
   },
   {
     id: 999105,
     event: "你退休了，去到处旅游，见识大好河山。",
     branch: retireGameOver2,
+    highlight: 1,
   },
   {
     id: 999106,
     event: "你退休了，但是闲不住，自己创立了一家公司，成为老板。",
     branch: retireGameOver2,
+    highlight: 1,
   },
   {
     id: 999107,
     event: "你退休了，在家安享晚年。",
     branch: retireGameOver2,
+    highlight: 1,
   }, {
     id: 999108,
     event: "你的身体很好，活到了101岁，无疾而终。",
@@ -183,6 +191,7 @@ const eventList = [
     id: 999115,
     event: "离开软件行业后，你闲不住，成为开水团外卖的骑手，送外卖去了。",
     branch: retireGameOver2,
+    highlight: 1,
   },
   {
     id: 700000,
@@ -230,6 +239,7 @@ const eventList = [
       LIF: -1,
     },
     NoRandom: 1,
+    highlight: 1,
   },
   {
     id: 900000,
@@ -237,119 +247,136 @@ const eventList = [
     effect : {
         LIF: -1
     },
-    NoRandom: 1
+    NoRandom: 1,
+    highlight: 1,
   }, {
     id: 900001,
     event: "为了生活，你在工地搬砖，但是身体不好，出意外死了。",
     effect : {
         LIF: -1
     },
-    NoRandom: 1
+    NoRandom: 1,
+    highlight: 1,
   }, {
     id: 900002,
     event: "你意外继承了一大笔遗产，潇洒去了。",
     effect : {
         LIF: -1
     },
-    NoRandom: 1
+    NoRandom: 1,
+    highlight: 1,
   }, {
     id: 900003,
     event: "你意外继承了一大笔遗产，收购了公司，天天PUA你原来的LD。",
     effect : {
         LIF: -1
     },
-    NoRandom: 1
+    NoRandom: 1,
+    highlight: 1,
   }, {
     id: 900004,
     event: "你离职后用钱整容，进军演艺界，成为了三线明星。",
     effect : {
         LIF: -1
     },
-    NoRandom: 1
+    NoRandom: 1,
+    highlight: 1,
   }, {
     id: 900005,
     event: "你离职后，继续做主播，成为了著名网红。",
     effect : {
         LIF: -1
     },
-    NoRandom: 1
+    NoRandom: 1,
+    highlight: 1,
   }, {
     id: 900006,
     event: "你辞去工作，陪伴着深爱的他，一边做美妆主播，一边做家庭主妇。",
     effect : {
         LIF: -1
     },
-    NoRandom: 1
+    NoRandom: 1,
+    highlight: 1,
   }, {
     id: 900007,
     event: "你离职后，日夜思念那个你放不下的男人，最终为了爱情，你义无反顾地去了泰国，成为真正的女人，嫁给了他，婚后过上了幸福的生活。",
     effect : {
         LIF: -1
     },
-    NoRandom: 1
+    NoRandom: 1,
+    highlight: 1,
   }, {
     id: 900008,
     event: "还没等离职流程走完，就猝死在了公司。",
     effect : {
         LIF: -1
     },
-    NoRandom: 1
+    NoRandom: 1,
+    highlight: 1,
   }, {
     id: 900009,
     event: "你回学校去继续深造，攻读了博士学位，成为了科学家。",
     effect : {
         LIF: -1
     },
-    NoRandom: 1
+    NoRandom: 1,
+    highlight: 1,
   }, {
     id: 900010,
     event: "家里人托关系，介绍你去一所民办学校当了老师。",
     effect : {
         LIF: -1
     },
-    NoRandom: 1
+    NoRandom: 1,
+    highlight: 1,
   }, {
     id: 900011,
     event: "离开公司，你挣扎了几个月，抑郁症越来越严重，自杀了。",
     effect : {
         LIF: -1
     },
-    NoRandom: 1
+    NoRandom: 1,
+    highlight: 1,
   }, {
     id: 900012,
     event: "你凭借着高颜值，通过明星选秀，成为了影视明星。",
     effect : {
         LIF: -1
     },
-    NoRandom: 1
+    NoRandom: 1,
+    highlight: 1,
   }, {
     id: 900013,
     event: "你的颜值实在太高了，一位霸道总裁看上你，在他猛烈追求下，你最终以身相许。",
     effect : {
         LIF: -1
     },
-    NoRandom: 1
+    NoRandom: 1,
+    highlight: 1,
   },{
     id: 900014,
     event: "你的颜值实在太高了，一位霸道总裁看上你，在他猛烈追求下，你做了手术，最终以身相许。",
     effect : {
         LIF: -1
     },
-    NoRandom: 1
+    NoRandom: 1,
+    highlight: 1,
   }, {
     id: 900015,
     event: "你欠了一堆外债，只能去给债主打工偿还。",
     effect : {
       LIF: -1
     },
-    NoRandom: 1
+    NoRandom: 1,
+    highlight: 1,
   }, {
     id: 900016,
     event: "你欠下了这辈子都还不起的外债，只能靠颜值肉偿了。",
     effect : {
       LIF: -1
     },
-    NoRandom: 1
+    NoRandom: 1,
+    highlight: 1,
   }, {
     id: 100000,
     event: "你离开了程序员这个行业，成为一名快递员。",
@@ -360,6 +387,7 @@ const eventList = [
   }, {
     id: 100001,
     event: "你毕业了，成为一名程序猿。",
+    highlight: 1,
     exclude: "TLT?[1004, 1047]",
     // effect: {
     //   SPR: '1000!',
@@ -367,6 +395,7 @@ const eventList = [
   }, {
     id: 100002,
     event: "你毕业了，成为一名程序媛。",
+    highlight: 1,
     exclude:  "TLT?[1003,2024,1054]",
     // hook(property) {
     //   console.log(property);
@@ -449,7 +478,8 @@ const eventList = [
     exclude: conAlreadyHaveJob,
     effect: {
       ENV: "1!",
-    }
+    },
+    highlight: 1,
   }, {
     id: 100011,
     event: "你加入了一家私人作坊。",
@@ -494,7 +524,8 @@ const eventList = [
     branch: [
       "(NMY<-3|SPR<0):700004",
       "EVT?[100001,100002]:700001",
-    ]
+    ],
+    highlight: 1,
   }, {
     // 智商太低，无人问津
     id: 100014,
@@ -503,7 +534,8 @@ const eventList = [
     branch: [
       "(NMY<-3|SPR<0):700004",
       "EVT?[100001,100002]:700002",
-    ]
+    ],
+    highlight: 1,
   }, {
     // 智商太低，无人问津
     id: 100015,
@@ -512,7 +544,8 @@ const eventList = [
     branch: [
       "(NMY<-3|SPR<0):700004",
       "EVT?[100001,100002]:700003",
-    ]
+    ],
+    highlight: 1,
   }, {
     id: 800004,
     event: "这是测试结局，不是真实结局！",
@@ -589,37 +622,48 @@ const eventList = [
     },
   }, {
     id: 120007,
-    event: "你接到任务，开发一个叫快脚的产品。"
+    event: "你接到任务，开发一个叫快脚的产品。",
+    highlight: 1,
   }, {
     id: 120008,
-    event: "你接到任务，开发一个叫抖乐的产品。"
+    event: "你接到任务，开发一个叫抖乐的产品。",
+    highlight: 1,
   }, {
     id: 120009,
-    event: "你接到任务，开发一个叫小信的产品。"
+    event: "你接到任务，开发一个叫小信的产品。",
+    highlight: 1,
   }, {
     id: 120010,
-    event: "你接到任务，开发一个叫有啊的电商网站。"
+    event: "你接到任务，开发一个叫有啊的电商网站。",
+    highlight: 1,
   }, {
     id: 120011,
-    event: "你接到任务，开发一个叫并汐汐的产品。"
+    event: "你接到任务，开发一个叫并汐汐的产品。",
+    highlight: 1,
   }, {
     id: 120012,
-    event: "你接到任务，开发一个叫冬瓜视频的产品。"
+    event: "你接到任务，开发一个叫冬瓜视频的产品。",
+    highlight: 1,
   }, {
     id: 120013,
-    event: "你接到任务，开发一个叫扣扣的聊天工具。"
+    event: "你接到任务，开发一个叫扣扣的聊天工具。",
+    highlight: 1,
   }, {
     id: 120014,
-    event: "你接到任务，开发一个叫三体的游戏。"
+    event: "你接到任务，开发一个叫三体的游戏。",
+    highlight: 1,
   }, {
     id: 120015,
-    event: "你接到任务，开发一个叫哒哒的打车软件。"
+    event: "你接到任务，开发一个叫哒哒的打车软件。",
+    highlight: 1,
   }, {
     id: 120016,
-    event: "你接到任务，开发一个叫嘿嘿的匿名社交软件。"
+    event: "你接到任务，开发一个叫嘿嘿的匿名社交软件。",
+    highlight: 1,
   }, {
     id: 130000,
     event: "中秋节到了，你用代码抢了两盒月饼。",
+    highlight: 1,
     effect : {
         MNY: 1
     },
@@ -797,6 +841,7 @@ const eventList = [
   }, {
     id: 150015,
     event: "你本来去理发，结果被黑心整容机构忽悠去做了微整形。",
+    highlight: 1,
     postEvent: "花了一大笔钱，好在颜值有些提升。",
     exclude: 'EVT?[150015]',
     effect: {
@@ -869,6 +914,7 @@ const eventList = [
   {
     id: 150023,
     event: "你终于义无反顾，请假去做了性别纠正手术，成为了真正的女人。",
+    highlight: 1,
     postEvent: "你回来后，公司的同事、身边的朋友都接纳了你，你觉得获得了新生。",
     include: "EVT?[150022]",
     exclude: "EVT?[150023]",
@@ -891,6 +937,7 @@ const eventList = [
   {
     id: 150024,
     event: "你决定出柜，日常穿女装上班。",
+    highlight: 1,
     include: "(CHR>5)&(TLT?[2024])&(EVT?[150027])",
     exclude: "EVT?[150024]",
     effect: {
@@ -906,12 +953,14 @@ const eventList = [
   {
     id: 150026,
     event: "聚会那天，你穿了一袭黑色长裙，脚踩红色高跟鞋，肤白貌美大长腿，惊艳了全场。",
+    highlight: 1,
     include: "(CHR>5)&(TLT?[2024])&(EVT?[150025])",
     exclude: "EVT?[150026]",
   },
   {
     id: 150027,
     event: "穿女装只有第一次和无数次。",
+    highlight: 1,
     postEvent: "你越来越喜欢穿女装了。",
     include: "(CHR>5)&(TLT?[2024])&(EVT?[150026])",
     exclude: "EVT?[150027]",
@@ -919,6 +968,7 @@ const eventList = [
   {
     id: 150028,
     event: "连你自己也开始怀疑自己的性别，不知道自己究竟是不是真的应该更适合做女孩子。",
+    highlight: 1,
     postEvent: "你身边的同事基本上已经完全把你当做女人。",
     include: "(CHR>5)&(TLT?[2024])&(EVT?[150024])",
     exclude: "EVT?[150028]",
@@ -976,6 +1026,7 @@ const eventList = [
   {
     id: 390001,
     event: 'LD看你工作努力，给你提名晋升。',
+    highlight: 1,
     exclude: '(ENV<3)|(WRK<10)|(EVT?[1110000,391012])', // 小公司不配晋升 
     branch: [
       '(INT<5)&(LCK<5):391000',
@@ -1304,6 +1355,7 @@ const eventList = [
   {
     id: 230006,
     event: "你的颜值实在太逆天了，这家公司已经承受不起。",
+    highlight: 1,
     include: "(WRK>30)&(CHR>12)",
     exclude: "EVT?[1110000]",
     branch: jump1,
@@ -1669,6 +1721,7 @@ const eventList = [
     id: 510004,
     event: "医生说激素破坏了你的男性功能，建议你做手术。",
     postEvent: "你无奈做了性别纠正手术，成为了女性。",
+    highlight: 1,
   },
   // 周年 
   {
@@ -1763,6 +1816,7 @@ const eventList = [
   {
     id: 410005,
     event: "你购买了懒投资，结果被坑惨了。",
+    highlight: 1,
     exclude: 'TLT?[1015]',
     effect: {
       MNY: -1,
@@ -1875,6 +1929,7 @@ const eventList = [
   {
     id: 420004,
     event: '你重仓买的股票扇贝跑了，业绩变脸，面临退市。',
+    highlight: 1,
     effect: {
       MNY: -1,
     }
@@ -1992,12 +2047,14 @@ const eventList = [
     id: 850000,
     event: 'LD夸你长得好看。',
     postEvent: '对你说，你那么好看，为什么不转前端？',
+    highlight: 1,
     exclude: 'CHR<6',
   },
   {
     id: 850001,
     event: 'LD夸你长得好看。',
     postEvent: '对你说，你那么好看，为什么不转后端？',
+    highlight: 1,
     exclude: 'CHR<6',
   },
   {
@@ -2027,6 +2084,7 @@ const eventList = [
   }, {
     id: 850008,
     event: '睡觉没接到报警电话，但组长、LD、LD+1全被叫醒了。',
+    highlight: 1,
   }, {
     id: 850009,
     event: '你在Review代码时痛骂作者，但发现作者是去年的自己。',
@@ -2052,7 +2110,8 @@ const eventList = [
     event: '每天给用户发钱，但是自己账号被风控了。',
   }, {
     id: 850016,
-    event: '你发现领导头发比你多。'
+    event: '你发现领导头发比你多。',
+    highlight: 1,
   }, {
     id: 850017,
     event: '接了个紧急项目的，你坐在工位上一个月没有和人说话。'
@@ -2085,15 +2144,18 @@ const eventList = [
     id: 850025,
     event: '同事问你0.1+0.2是多少，',
     postEvent: '果断回答是0.30000000000000004。',
+    highlight: 1,
     exclude: 'EVT?[850025]'
   }, {
     id: 850026,
     event: '你不小心把祖传的木雕树人给丢在家门口的河里了，那可是唐朝文物。',
+    highlight: 1,
     exclude: 'EVT?[850026]',
   }, {
     id: 850027,
     event: '在家门口的河边，河神拿出三个树人，问你，',
     postEvent: '年轻的程序员哟~，你丢的是这个夏树人，还是这个商树人，还是这个鲁迅呢？',
+    highlight: 1,
     include: 'EVT?[850026]',
     exclude: 'EVT?[850027]',
   }, {
@@ -2111,21 +2173,26 @@ const eventList = [
     id: 850031,
     event: 'LD在会议上让你寄个土豆。',
     postEvent: '中午你出去买了土豆，问LD要寄给谁，他笑了半天，你才知道原来是让你记个TODO。',
+    highlight: 1,
     exclude: 'EVT?[850031]',
   }, {
     id: 850032,
     event: '一直调试不通过的代码，莫名其妙就好了，迎着同事询问的目光，你也不好意思说自己什么也没做。',
+    highlight: 1,
   }, {
     id: 850033,
     event: '你的VSCode突然打不开了，你被迫用Eclipse。',
     postEvent: '你打开Eclipse后去喝了一杯咖啡，回来时，项目还没加载出来。',
+    highlight: 1,
   }, {
     id: 850034,
     event: '你和同事吵了一架，因为他竟然怀疑PHP不是世界上最好的语言。',
+    highlight: 1,
   },
   {
     id: 850035,
     event: '你离开工位忘记锁屏，一位保洁阿姨在整理工区时顺手帮你改好了一个困扰你好几天的bug。',
+    highlight: 1,
     effect: {
       LCK: 1,
     }
@@ -2138,23 +2205,27 @@ const eventList = [
   {
     id: 850037,
     event: '你老板把你当成王涛骂了半天，你也不吱声，因为反正和你没关系。',
+    highlight: 1,
     include: 'EVT?[850036]',
     exclude: 'EVT?[850037]',
   },
   {
     id: 850038,
     event: '你加入了奇舞团，很多人问你是不是会跳舞，尴尬的是你并不会。',
+    highlight: 1,
     exclude: 'EVT?[850038]',
   },
   {
     id: 850039,
     event: '你组长王涛经常帮你改代码，你觉得他其实是在给你添乱。',
     postEvent: '你说他懂技术吧，这里有5个bug，你说他不懂吧？他改进去5个bug！',
+    highlight: 1,
     exclude: 'EVT?[850039]',
   },
   {
     id: 850040,
     event: '你一口气喝了两斤白酒，写了两千行代码，零bug。',
+    highlight: 1,
     postEvent: '醒了以后，发现看不懂。',
     exclude: 'EVT?[850040]',
   },
@@ -2162,6 +2233,7 @@ const eventList = [
     id: 850041,
     event: '你帮同事改了3个bug，同事很感激你。',
     postEvent: '不久之后，发现你给他改进去7个新bug。',
+    highlight: 1,
     exclude: 'EVT?[850041]',
   },
   {
@@ -2271,6 +2343,7 @@ const eventList = [
     id: 850054,
     event: '老板对领导说，给你一年时间，把我们的产品做成华夏国的油管。',
     postEvent: '领导对你说，给你一个月时间，照着油管抄一下。',
+    highlight: 1,
   },
   {
     id: 850055,
@@ -2313,6 +2386,7 @@ const eventList = [
   {
     id: 850061,
     event: '听说老板娘劝老板开除你，因为算命先生说你命里克公司。',
+    highlight: 1,
     exclude: '(INT>5)|(ENV>2)|(EVT?[850061])',
     include: 'EVT?[850060]',
   },
@@ -2333,6 +2407,7 @@ const eventList = [
     id: 850064,
     event: '由于你孜孜不倦地写bug，公司摇摇欲坠。',
     postEvent: '同事偷偷改了你电脑的密码，试图阻止你写bug，然而这并没有什么用。',
+    highlight: 1,
     exclude: '(INT>4)|(ENV>2)|(EVT?[850064])',
     include: 'EVT?[850063]',
   },
@@ -2352,6 +2427,7 @@ const eventList = [
   {
     id: 850067,
     event: '你当了面试官，因为你的普通话不好，把来面试的小姑娘急哭了。',
+    highlight: 1,
     postEvent: '她听不懂你提的问题。',
     include: 'TLT?[1016]',
     exclude: 'EVT?[850067]',
@@ -2439,6 +2515,7 @@ const eventList = [
     include: conFemale2,
     event: 'PM给你分了一个需求，要求一周内完成。',
     postEvent: '你卖个萌，完成时间变成两周。',
+    highlight: 1,
   },
   {
     id: 870003,
@@ -2454,6 +2531,7 @@ const eventList = [
     id: 870005,
     include: conFemale2,
     event: '部门聚会，你穿了一袭白色长裙，惊艳全场。',
+    highlight: 1,
   },
   {
     id: 870006,
@@ -2476,6 +2554,7 @@ const eventList = [
     id: 870008,
     include: `${conFemale2}&(TLT?[1026])&(CHR>4)`,
     event: '你成了团队里的程序员鼓励师，同事们都宠着你。',
+    highlight: 1,
     exclude: 'EVT?[870008]',
     effect: {
       SPR: 1,
@@ -2499,6 +2578,7 @@ const eventList = [
     include: `(${conFemale2})&(CHR>6)&(SPR>6)`,
     event: '早早起来化了淡妆，对着镜子拍拍脸蛋，自言自语。',
     postEvent: '今天继续好好努力，不然对不起自己这副倾城容颜。',
+    highlight: 1,
   },
   {
     id: 870012,
@@ -2506,6 +2586,7 @@ const eventList = [
     postEvent: '你男票给你买了一台Macbook Pro。',
     include: `${conFemale2}`,
     exclude: 'EVT?[850012,850013,220000]',
+    highlight: 1,
   },
   {
     id: 870013,
@@ -2513,6 +2594,7 @@ const eventList = [
     postEvent: '他给你买来一台Macbook Pro。',
     include: `(${conFemale2})&(EVT?[220000])`,
     exclude: 'EVT?[850012,850013]',
+    highlight: 1,
   },
   // --- 男生 ---
   {
@@ -2521,6 +2603,7 @@ const eventList = [
     exclude: `(${conFemale2})|(EVT?[220000])`,
     event: '逛购物网站时，你想给女朋友买一条围巾。',
     postEvent: '突然想起来你没有女朋友。',
+    highlight: 1,
   },
   {
     id: 880001,
@@ -2528,6 +2611,7 @@ const eventList = [
     exclude: conFemale2,
     event: '下班去踢球，一脚开球把LD家的窗户玻璃砸碎了。',
     postEvent: '趁LD在加班，赶快溜走。',
+    highlight: 1,
   },
   {
     id: 880002,
@@ -2552,11 +2636,13 @@ const eventList = [
     include: `(${conMale})&(CHR>6)&(SPR>6)`,
     exclude: conFemale2,
     event: '你在路上发现一枚帅哥，仔细一看，原来是镜子里的自己。',
+    highlight: 1,
   },
   {
     id: 880006,
     include: `(${conMale})&(TLT?[1026])`,
     event: '你想成为程序员鼓励师，结果发现他们不招男生。',
+    highlight: 1,
     exclude: 'EVT?[880006]',
   },
   {
@@ -2565,6 +2651,7 @@ const eventList = [
     exclude: 'EVT?[880007]',
     event: '隔壁部门的女装大佬成为了程序员鼓励师。',
     postEvent: `你去询问LD，LD告诉你，性别不重要，重要的是要长得好看且会打扮。`,
+    highlight: 1,
   },
   {
     id: 880008,
@@ -2577,6 +2664,7 @@ const eventList = [
     postEvent: '你给她买了一台Macbook Pro。',
     include: `${conMale}`,
     exclude: 'EVT?[870009,870010,220000]',
+    highlight: 1,
   },
   {
     id: 880010,
@@ -2584,6 +2672,7 @@ const eventList = [
     postEvent: '你给她买了一台Macbook Pro。',
     include: `(${conMale})&(EVT?[220000])`,
     exclude: 'EVT?[870009,870010]',
+    highlight: 1,
   },
   // ---- 掘金 ----
   {
@@ -2593,6 +2682,7 @@ const eventList = [
     branch: [
       'LCK>7:861001',
     ],
+    highlight: 1,
   },
   {
     id: 860001,
@@ -2601,6 +2691,7 @@ const eventList = [
     branch: [
       'LCK>7:861001',
     ],
+    highlight: 1,
   },
   {
     id: 860002,
@@ -2609,6 +2700,7 @@ const eventList = [
     branch: [
       'LCK>7:861001',
     ],
+    highlight: 1,
   },
   {
     id: 860003,
@@ -2616,7 +2708,8 @@ const eventList = [
     include: "EVT?[120003]",
     branch: [
       'LCK>2:861002',
-    ]
+    ],
+    highlight: 1,
   },
   {
     id: 861001,
@@ -2630,7 +2723,8 @@ const eventList = [
     event: '你的沸点被点了超过100个赞，很开心。',
     effect: {
       SPR: 1,
-    }
+    },
+    highlight: 1,
   },
   {
     id: 860004,
@@ -2639,7 +2733,8 @@ const eventList = [
     exclude: "EVT?[860004]",
     effect: {
       SPR:1,
-    }
+    },
+    highlight: 1,
   },
 
   // 退休事件
@@ -2788,6 +2883,7 @@ const eventList = [
   {
     id: 131102,
     event: '你出轨了，但你已无法回头。',
+    highlight: 1,
   },
   {
     id: 131103,
@@ -2799,6 +2895,7 @@ const eventList = [
     event: '你发现了一个代码漏洞，打算下次中秋节利用它来抢月饼。',
     include: 'TLT?[1005]',
     exclude: 'EVT?[131005]',
+    highlight: 1,
   },
   {
     id: 131006,
@@ -2831,6 +2928,7 @@ const eventList = [
   {
     id: 131009,
     event: '你在项目中使用了一个开源框架，该项目的作者三个月后跑路，无人维护。',
+    highlight: 1,
     postEvent: '你和同事连续加班了半个月，把项目迁回老框架。',
     exclude: 'EVT?[131009]',
     effect: {
@@ -2840,6 +2938,7 @@ const eventList = [
   {
     id: 131010,
     event: '你在GayHub平台上发现一个有趣的新项目，你研究了一个月，发现这个项目其实是用来摸鱼的。',
+    highlight: 1,
     exclude: 'EVT?[131010]',
   },
   {
@@ -2850,6 +2949,7 @@ const eventList = [
   {
     id: 131012,
     event: '你在GayHub平台上发现一个有趣的新项目，你研究了一个月，发现这个项目其实你自己十年前写的。',
+    highlight: 1,
     exclude: 'EVT?[131012]',
   },
   {
@@ -2860,6 +2960,7 @@ const eventList = [
   {
     id: 131014,
     event: '你在GayHub平台上发现了一个有趣的新项目，你研究了一个月，发现这是个程序员同性交友网站。',
+    highlight: 1,
     exclude: 'EVT?[131014]',
   },
   // ---- 八卦 -----
@@ -2899,6 +3000,7 @@ const eventList = [
   {
     id: 1110001,
     event: '一个老爷爷在山上发现一个葫芦种子，种出七色葫芦，成熟后变成几个小人。',
+    highlight: 1,
     include: 'EVT?[1110000]',
     exclude: 'EVT?[1110001]',
   },
@@ -2918,18 +3020,21 @@ const eventList = [
   {
     id: 1110004,
     event: '你接到一个秘密项目，给国防部开发一套黑色的机甲。',
+    highlight: 1,
     include: 'EVT?[1110000]',
     exclude: 'EVT?[1110004]',
   },
   {
     id: 1110005,
     event: '机甲项目开发到了关键的时刻，你发现一些同事莫名失踪。',
+    highlight: 1,
     include: 'EVT?[1110004]',
     exclude: 'EVT?[1110005]',
   },
   {
     id: 1110006,
     event: '下班途中，你遭到黑衣人冷枪袭击。',
+    highlight: 1,
     include: 'EVT?[1110005]',
     exclude: 'EVT?[1110006]',
     branch: [
@@ -2939,6 +3044,7 @@ const eventList = [
   {
     id: 1111000,
     event: '你头部中弹了，倒在了黑衣人的枪下。',
+    highlight: 1,
     branch: [
       "STR<5:1111001",
       "STR>4:1111002",
@@ -2954,11 +3060,13 @@ const eventList = [
   {
     id: 1111002,
     event: '你失去意识，最后一眼，你看到一个身着黑甲的美女。',
+    highlight: 1,
   },
   {
     id: 1110007,
     event: '你醒了，你十分惊讶，不明白自己明明被爆头，怎么能活下来。',
     postEvent: '你检查全身上下，奇怪的是竟然没有一点伤痕。',
+    highlight: 1,
     include: 'EVT?[1110006]',
     exclude: 'EVT?[1110007]',
   },
@@ -2971,6 +3079,7 @@ const eventList = [
   {
     id:1110009,
     event: '一位穿着军装的部队首长找到你，让你到一个秘密基地去工作。',
+    highlight: 1,
     include: '(INT>7)&(EVT?[1110007])',
     exclude: 'EVT?[1110009]',
     effect: {
@@ -2989,16 +3098,19 @@ const eventList = [
   },{
     id:1110011,
     event: '你了解了自己继承了神河文明的超神基因，所以才能够被子弹爆头而不死。',
+    highlight: 1,
     exclude: 'EVT?[1110011]',
     include: 'EVT?[1110009]',
   },{
     id:1110012,
     event: '秘密基地的教官是一位美女，自称蔷薇。',
+    highlight: 1,
     include: 'EVT?[1110009]',
     exclude: 'EVT?[1110012]',
   },{
     id:1110013,
     event: '今天听到一则令人震惊的消息，孙悟空是真实存在的，是第二代超级基因战士。',
+    highlight: 1,
     include: 'EVT?[1110009]',
     exclude: 'EVT?[1110013]',
   },{
@@ -3056,6 +3168,7 @@ const eventList = [
   {
     id: 1110017,
     event: '经过锻炼和实战打磨，你进化成了二代神体',
+    highlight: 1,
     include: '(EVT?[1110010])&(STR>50)',
     exclude: 'EVT?[1110017]',
     effect: {
@@ -3066,6 +3179,7 @@ const eventList = [
   {
     id: 1110018,
     event: '经过锻炼和实战打磨，你进化成了三代神体',
+    highlight: 1,
     include: '(EVT?[1110017])&(STR>120)',
     exclude: 'EVT?[1110018]',
     effect: {
@@ -3075,6 +3189,7 @@ const eventList = [
   }, {
     id: 1110019,
     event: '你们出发去云焱森林找孙悟空。',
+    highlight: 1,
     postEvent: '你们和孙悟空爆发了大战。',
     include: '(WRK>120)&(EVT?[1110010])',
     exclude: 'EVT?[1110019]',
@@ -3095,22 +3210,26 @@ const eventList = [
   }, {
     id: 1110020,
     event: '被称为饕餮文明的外星人入侵了地球。',
+    highlight: 1,
     include: 'EVT?[1110019]',
     exclude: 'EVT?[1110020]',
   }, {
     id: 1110021,
     event: '华夏成为了对抗外星人入侵的核心力量，北之星、巨峡市、天河市先后陷入战火。',
+    highlight: 1,
     include: 'EVT?[1110020]',
     exclude: 'EVT?[1110021]',
   }, {
     id: 1110022,
     event: '外星人袭击了守护巨峡市的航母，狙击手用弑神武射杀了杜将军。',
+    highlight: 1,
     postEvent: '巨峡战役爆发，你奉命带队迎战。',
     include: 'EVT?[1110021]',
     exclude: 'EVT?[1110022]',
   }, {
     id: 1110023,
     event: '天使文明、恶魔文明的飞船出现在巨峡号上空。',
+    highlight: 1,
     postEvent: '大战一触即发。',
     include: 'EVT?[1110022]',
     exclude: 'EVT?[1110023]',
@@ -3123,6 +3242,7 @@ const eventList = [
   {
     id: 1111010,
     event: "你的小队战败了，你阵亡了，虽然巨峡号和华夏军队进行了最后的抵抗，但地球文明还是不可避免地渐渐毁于战火……",
+    highlight: 1,
     effect: {
       LIF: -1
     }
@@ -3131,6 +3251,7 @@ const eventList = [
     id: 1111011,
     event: "你和孙悟空、杜蔷薇等同伴并肩作战，成功抵抗了饕餮军团，天使也成功驱逐了恶魔，地球暂时获得了和平。",
     postEvent: "你和团队返回基地，你们继续投身到长期的艰苦作战中，你们小队有了一个响亮的名字：雄兵连。",
+    highlight: 1,
     effect: {
       LIF: -1
     }
@@ -3139,6 +3260,7 @@ const eventList = [
     id: 1111012,
     event: "你和孙悟空、杜蔷薇等同伴并肩作战，打败了饕餮军团，你们和天使结盟，天使王神圣凯撒让天使炙心来帮祝你们。",
     postEvent: "你和团队返回基地，你们继续投身到长期的艰苦作战中，你和天使们一起在太阳系外构筑了钢铁长城，你们守护者地球的和平。",
+    highlight: 1,
     effect: {
       LIF: -1
     }
@@ -3157,6 +3279,7 @@ const eventList = [
     event: '天赋【满血复活】发动：你醒了过来，在校园草坪上，好像做了个长长的梦。你记起今天刚和同学们拍完毕业照，你们这一届同学即将离开校园，走上社会。',
     include: 'LIF=2',
     postEvent: '你努力回想刚才做的梦，好像很真实，但又记不清。你隐约觉得有些东西不一样，但又似乎什么都没变。。。',
+    highlight: 1,
     effect: {
       LIF: -1,
       AGE: '-1!',
@@ -3174,6 +3297,7 @@ const eventList = [
   {
     id: 888700,
     event: '你成年了，是只喵星人。',
+    highlight: 1,
     include: 'TLT?[1081]',
     exclude: 'EVT?[999888]',
   },
@@ -3219,6 +3343,7 @@ const eventList = [
   {
     id: 888708,
     event: '同事们都很喜欢你，经常喂你小鱼干。',
+    highlight: 1,
     include: 'EVT?[888700]',
     effect: {
       STR: 1,
@@ -3227,6 +3352,7 @@ const eventList = [
   {
     id: 888709,
     event: '公司环境很好，天气好的时候，你在屋顶晒太阳、玩耍。',
+    highlight: 1,
     postEvent: '你过得很健康。',
     include: 'EVT?[888700]',
     effect: {
@@ -3236,6 +3362,7 @@ const eventList = [
   {
     id: 888710,
     event: '一位粗心的同事不小心把你锁在阁楼上，你从楼顶跳下来的时候受了一点伤。',
+    highlight: 1,
     include: 'EVT?[888700]',
     effect: {
       STR: -1,
@@ -3244,6 +3371,7 @@ const eventList = [
   {
     id: 888711,
     event: '公司的访客给你乱喂垃圾食品。',
+    highlight: 1,
     include: 'EVT?[888700]',
     effect: {
       STR: -1,
@@ -3252,21 +3380,25 @@ const eventList = [
   {
     id: 888712,
     event: '你抓了一只麻雀。',
+    highlight: 1,
     include: 'EVT?[888700]',
   },
   {
     id: 888713,
     event: '你抓了一只老鼠。',
+    highlight: 1,
     include: 'EVT?[888700]',
   },
   {
     id: 888714,
     event: '你把同事鱼缸里的鱼给偷了。',
+    highlight: 1,
     include: 'EVT?[888700]',
   },
   {
     id: 888715,
     event: '你追自己尾巴玩。',
+    highlight: 1,
     include: 'EVT?[888700]',
     effect: {
       SPR: 1,
@@ -3275,6 +3407,7 @@ const eventList = [
   {
     id: 888716,
     event: '同事给你铲屎，帮你撸毛，你舒服地躺在地上。',
+    highlight: 1,
     include: 'EVT?[888700]',
     effect: {
       SPR: 1,
@@ -3283,6 +3416,7 @@ const eventList = [
   {
     id: 888717,
     event: '你今天淘气地把一个同事吓了一跳，被训了一顿。',
+    highlight: 1,
     include: 'EVT?[888700]',
     effect: {
       SPR: -1,
@@ -3291,6 +3425,7 @@ const eventList = [
   {
     id: 888718,
     event: '你发情了，喵喵叫，太吵了，同事把你带去宠物医院做了绝育手术。',
+    highlight: 1,
     include: 'EVT?[888700]',
     exclude: 'EVT?[888718]',
     effect: {
@@ -3300,6 +3435,7 @@ const eventList = [
   {
     id: 888719,
     event: '你踩在一位同事的键盘上，帮她修好了一个bug。',
+    highlight: 1,
     include: 'EVT?[888700]',
   },
   {
@@ -3359,6 +3495,7 @@ const eventList = [
     id: 888726,
     event: '你离开了这个世界。',
     postEvent: '公司的同事都很难过，他们把你葬在院子里，给你立了一个小墓碑，感谢你这些年给他们带去的欢乐。',
+    highlight: 1,
     include: '(EVT?[888700])',
     exclude: '(STR>0)&(AGE<120)',
     effect: {

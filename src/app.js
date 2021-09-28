@@ -67,7 +67,8 @@ class App{
             this.hint(`[ERROR] at (${source}:${lineno}:${colno})\n\n${error?.stack||error||'unknow Error'}`, 'error');
         }
         const keyDownCallback = (keyboardEvent) => {
-            if (keyboardEvent.which === 13 || keyboardEvent.keyCode === 13) {
+            if (keyboardEvent.which === 13 || keyboardEvent.keyCode === 13 ||
+                keyboardEvent.which === 32 || keyboardEvent.keyCode === 32) {
                 const pressEnterFunc = this.#pages[this.#currentPage]?.pressEnter;
                 pressEnterFunc && typeof pressEnterFunc === 'function' && pressEnterFunc();
             }

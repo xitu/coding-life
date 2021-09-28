@@ -1,3 +1,7 @@
+# product
+public/*
+docs/*
+
 # Logs
 logs
 *.log

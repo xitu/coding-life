@@ -503,6 +503,7 @@ class App{
                 </div>
                 <div class="talents">
                     <div class="header">{此生天赋.}</div>
+                    <div class="list"></div>
                 </div>
                 <div class="index">
                     <div class="header">{各项指标.}</div>
@@ -673,7 +674,7 @@ class App{
                         </div>
                     `)
                 })
-                sharePage.find('.talents').append(arrTalentHtml.join(''))
+                sharePage.find('.talents .list').html(arrTalentHtml.join(''))
                 
                 const arrResultSvg = numberToSvg(summaryData.AGE)
                 sharePage.find('.result .text').html(arrResultSvg.join(''));

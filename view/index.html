@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
     <meta name="description" content="如果不是家里穷，我也不想当码农"/>
     <meta name="keywords" content="码农搬砖模拟器 人生重开模拟器 liferestart life restart remake 人生重来"/>
-    <link id="themeLink" rel="stylesheet" href="https://lf9-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/light.css?ver=1">
-    <link rel="stylesheet" href="https://lf9-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/share.css?ver=1">
     <link rel="manifest" href="https://lf9-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/manifest.json">
     <title>码农搬砖模拟器</title>
     <link rel="prefetch" href="https://lf9-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/bg.png">
@@ -42,6 +40,17 @@
       //     'from': 'index',
       // })
   </script>
+  <script>
+    // const BASE_PATH = 'https://lf9-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/';
+    const BASE_PATH = '';
+    const DARK_CSS = BASE_PATH + 'dark.css?ver=123456';
+    const LIGHT_CSS =  BASE_PATH + 'light.css?ver=123456';
+    const SHARE_CSS = BASE_PATH + 'share.css?ver=123';
+    const BUNDLE_JS = BASE_PATH + '/bundle.js?ver=123456789';
+    document.write('<link id="themeLink" rel="stylesheet" href="' + DARK_CSS + '">');
+    document.write('<link rel="stylesheet" href="' + SHARE_CSS + '">');
+    
+  </script>
 </head>
 <body>
   <div class="banners-container">
@@ -73,8 +82,10 @@
   <script>
     // var vConsole = new VConsole();
   </script>
-  <script src="/bundle.js"></script>
-  <!-- <script src="https://lf9-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/bundle.js?ver=12345"></script> -->
+  <script>
+    var abc = '--------';
+    document.write('<script src="' + BUNDLE_JS.replace('://', abc).replace('//', '/').replace(abc, '://') + '"><\/script>');
+  </script>
   <script>
     // if ('serviceWorker' in navigator) {
     //   window.addEventListener('load', function () {

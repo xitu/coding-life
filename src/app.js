@@ -548,6 +548,13 @@ class App{
                         </div>
                     </div>
                 </div>
+                <div class="highlight">
+                    <p>你毕业了，成为一名程序猿</p>
+                    <p>你走在上班路上，天上忽然骗来一张小纸条，你捡起来，之间上面写着<br/>【号外】掘金大会开始了</p>
+                    <p>同时为1=2等于几</p>
+                    <p>LD夸你张的好看<br/>对你说，你那么好看，为什么不转前端</p>
+                    <p>你作为程序猿工作了10多年，觉的自己不喜欢这个职业</p>
+                </div>
                 <div class="divide">//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</div>
                 <div class="erweima">
                     <div class="item">
@@ -663,8 +670,6 @@ class App{
                 const summaryData = this.#life.getSummary();
                 // console.log(talents, summaryData)
 
-                console.log(this.hightlight());
-
                 const arrTalentHtml = [];
                 [...talents].forEach((talent, index) => {
                     arrTalentHtml.push(`
@@ -698,6 +703,15 @@ class App{
                     $el.find('.desc').html(judge);
                     $el.find('.count').html(numberToSvg(summaryData[item]));
                 })
+
+                const highlights = this.highlight();
+                console.log(highlights);
+                const highlightHtml = [];
+                highlights.forEach(item => {
+                    // highlightHtml.push(`<p>第${item[0]}个月：${item[1].replace(/<br\s*\/*\s*>/g, '')}</p>`)
+                    highlightHtml.push(`<div class="item"><span>${item[0]}个月：</span><p>${item[1].replace(/<br\s*\/*\s*>/g, '')}</p></div>`)
+                })
+                sharePage.find('.highlight').html(highlightHtml.join(''))
 
             })
 
@@ -921,7 +935,7 @@ class App{
         });
     }
 
-    hightlight() {
+    highlight() {
         const highlightContents = this.#life.getHighLightContents(5);
         return highlightContents.map(({age, content}) => [age, content.map(
             ({type, description, name, postEvent}) => {
@@ -938,12 +952,10 @@ class App{
     setTheme(theme) {
         const themeLink = $(document).find('#themeLink');
 
-        let basePath = 'https://lf9-static.bytednsdoc.com/obj/eden-cn/wthJoabvf_lm_tyvmahsWgpi/ljhwZthlaukjlkulzlp/coding_life/';
-        
         if(theme == 'light') {
-            themeLink.attr('href', basePath + 'light.css?ver=1');
+            themeLink.attr('href', LIGHT_CSS);
         } else {
-            themeLink.attr('href', basePath + 'dark.css?ver=1');
+            themeLink.attr('href', DARK_CSS);
         }
     }
 

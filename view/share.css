@@ -254,3 +254,24 @@
     border-bottom: solid 0.071rem #000;
     text-align:center;
 }
+
+.highlight{
+    border-top: solid 0.071rem #000;
+    padding-top: 0.8rem;
+    margin-top: 0.4rem;
+}
+/* .highlight p{
+    margin-bottom: 0.4rem;
+    font-size: 1rem; 
+    text-indent: 2em;
+} */
+.highlight .item{
+    display: flex;
+}
+.highlight .item span{
+    width:5rem;
+    text-align: right;
+}
+.highlight .item p{
+    flex:1;
+}

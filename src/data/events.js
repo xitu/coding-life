@@ -5,12 +5,6 @@ const conAlreadyHaveJob = 'ENV>0';
 const conFemale = 'EVT?[100002,150023, 510004]'; // 妹纸
 const conFemale2 = 'EVT?[100002,150023, 510004, 150024]'; // 妹纸和女装大佬
 const conMale = 'EVT?[100001]';
-const conMale2 = 'EVT?[100001,150024]';
-
-const conWorkInGQ = 'EVT?[100008,231001,241001]'; // 国企
-const conWorkInGrant = 'EVT?[100007,231000,231004,241001,241004]';  // 大厂
-const conWorkInGood = 'EVT?[100005,100006,231002,231003,241002,241003]'; // 小厂
-const conWorkINSmall = 'EVT?[100003,100004,100009,100010,100021,700000,231005,241005]'; // 小小厂
 
 // 跳槽分支
 const jump1 = [
@@ -836,7 +830,7 @@ const eventList = [
   }, {
     id: 150014,
     event: "有女同事频频对你献殷勤。",
-    include: `(CHR>7)&${conMale2}`,
+    include: `(CHR>7)&(${conMale})`,
     exclude: 'EVT?[150023]'
   }, {
     id: 150015,
@@ -1634,9 +1628,9 @@ const eventList = [
     exclude: "(ENV=5)|(EVT?[510001])",
     include: "AGE>12",
     branch: [
-      `(${conMale2})&(LCK<3)&(AGE>18)&(EVT?[510000]):510001`,
+      `(${conMale})&(LCK<3)&(AGE>18)&(EVT?[510000]):510001`,
       `(${conFemale2})&(LCK<-5)&(AGE>18)&(EVT?[510000]):510001`,
-      `(${conMale2})&(LCK<3)&(AGE>18):510000`,
+      `(${conMale})&(LCK<3)&(AGE>18):510000`,
       `(${conFemale2})&(LCK<-5)&(AGE>18):510000`, // 女性掉发的情况少一些
     ]
   },
@@ -2641,6 +2635,7 @@ const eventList = [
   {
     id: 880006,
     include: `(${conMale})&(TLT?[1026])`,
+    exclude: conFemale2,
     event: '你想成为程序员鼓励师，结果发现他们不招男生。',
     highlight: 1,
     exclude: 'EVT?[880006]',
@@ -2648,7 +2643,7 @@ const eventList = [
   {
     id: 880007,
     include: `(${conMale})&(TLT?[1026])&(EVT?[880006])`,
-    exclude: 'EVT?[880007]',
+    exclude: `(EVT?[880007])|(${conFemale2})`,
     event: '隔壁部门的女装大佬成为了程序员鼓励师。',
     postEvent: `你去询问LD，LD告诉你，性别不重要，重要的是要长得好看且会打扮。`,
     highlight: 1,
@@ -2656,6 +2651,7 @@ const eventList = [
   {
     id: 880008,
     include: `(${conMale})&(STR>4)`,
+    exclude: `(${conFemale2})`,
     event: '公司组织员工运动会，你报名参加了男子1500米长跑，获得了亚军。',
   },
   {
@@ -2663,7 +2659,7 @@ const eventList = [
     event: '你女友对你说，她想要一支MAC。',
     postEvent: '你给她买了一台Macbook Pro。',
     include: `${conMale}`,
-    exclude: 'EVT?[870009,870010,220000]',
+    exclude: `(EVT?[870009,870010,220000])|(${conFemale2})`,
     highlight: 1,
   },
   {
@@ -2671,7 +2667,7 @@ const eventList = [
     event: '你妻子对你说，她想要一支MAC。',
     postEvent: '你给她买了一台Macbook Pro。',
     include: `(${conMale})&(EVT?[220000])`,
-    exclude: 'EVT?[870009,870010]',
+    exclude: `(EVT?[870009,870010])|(${conFemale2})`,
     highlight: 1,
   },
   // ---- 掘金 ----
